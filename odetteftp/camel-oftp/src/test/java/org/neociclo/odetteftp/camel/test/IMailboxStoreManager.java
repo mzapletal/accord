@@ -16,9 +16,9 @@
  */
 package org.neociclo.odetteftp.camel.test;
 
-import java.io.IOException;
-
 import org.neociclo.odetteftp.protocol.OdetteFtpObject;
+
+import java.io.IOException;
 
 /**
  * @author Rafael Marins

@@ -16,12 +16,6 @@
  */
 package org.neociclo.odetteftp.examples.client;
 
-import static org.neociclo.odetteftp.TransferMode.SENDER_ONLY;
-
-import java.io.File;
-import java.util.Queue;
-import java.util.concurrent.ConcurrentLinkedQueue;
-
 import org.neociclo.odetteftp.OdetteFtpVersion;
 import org.neociclo.odetteftp.examples.MainSupport;
 import org.neociclo.odetteftp.oftplet.OftpletFactory;
@@ -33,6 +27,12 @@ import org.neociclo.odetteftp.service.X25MoreDataBitClient;
 import org.neociclo.odetteftp.support.InOutSharedQueueOftpletFactory;
 import org.neociclo.odetteftp.support.OdetteFtpConfiguration;
 import org.neociclo.odetteftp.support.PasswordHandler;
+
+import java.io.File;
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
+
+import static org.neociclo.odetteftp.TransferMode.SENDER_ONLY;
 
 /**
  * @author Rafael Marins

@@ -16,21 +16,6 @@
  */
 package org.neociclo.odetteftp.protocol.v14;
 
-import static org.neociclo.odetteftp.protocol.v14.CommandBuilderVer14.endToEndResponse;
-import static org.neociclo.odetteftp.protocol.v14.CommandBuilderVer14.negativeEndResponse;
-import static org.neociclo.odetteftp.protocol.v14.CommandBuilderVer14.startFile;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.NERPCREA_FIELD;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.NERPDATE_FIELD;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.NERPDEST_FIELD;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.NERPDSN_FIELD;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.NERPORIG_FIELD;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.NERPREAS_FIELD;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.NERPTIME_FIELD;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDTIME_FIELD;
-import static org.neociclo.odetteftp.util.SessionHelper.getSessionOftplet;
-
-import java.util.Date;
-
 import org.neociclo.odetteftp.OdetteFtpException;
 import org.neociclo.odetteftp.OdetteFtpSession;
 import org.neociclo.odetteftp.oftplet.Oftplet;
@@ -47,6 +32,21 @@ import org.neociclo.odetteftp.util.ProtocolUtil;
 import org.neociclo.odetteftp.util.TimestampTicker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Date;
+
+import static org.neociclo.odetteftp.protocol.v14.CommandBuilderVer14.endToEndResponse;
+import static org.neociclo.odetteftp.protocol.v14.CommandBuilderVer14.negativeEndResponse;
+import static org.neociclo.odetteftp.protocol.v14.CommandBuilderVer14.startFile;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.NERPCREA_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.NERPDATE_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.NERPDEST_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.NERPDSN_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.NERPORIG_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.NERPREAS_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.NERPTIME_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDTIME_FIELD;
+import static org.neociclo.odetteftp.util.SessionHelper.getSessionOftplet;
 
 /**
  * @author Rafael Marins

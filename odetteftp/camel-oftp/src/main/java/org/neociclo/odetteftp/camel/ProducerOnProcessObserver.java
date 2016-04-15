@@ -16,12 +16,6 @@
  */
 package org.neociclo.odetteftp.camel;
 
-import static org.neociclo.odetteftp.camel.OftpMessage.*;
-
-import java.util.Observable;
-import java.util.Observer;
-import java.util.Queue;
-
 import org.apache.camel.Exchange;
 import org.apache.camel.ExpectedBodyTypeException;
 import org.apache.camel.Message;
@@ -31,6 +25,12 @@ import org.apache.camel.util.ObjectHelper;
 import org.neociclo.odetteftp.protocol.OdetteFtpObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Observable;
+import java.util.Observer;
+import java.util.Queue;
+
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_SESSION_REMOTE_USER;
 
 /**
  * Adds the received Odette FTP request to the corresponding producer's

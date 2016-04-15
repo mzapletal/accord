@@ -16,10 +16,10 @@
  */
 package org.neociclo.odetteftp.support;
 
-import java.io.IOException;
-
 import org.neociclo.odetteftp.security.OneToOneHandler;
 import org.neociclo.odetteftp.security.PasswordCallback;
+
+import java.io.IOException;
 
 /**
  * @author Rafael Marins

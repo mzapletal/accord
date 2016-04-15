@@ -16,16 +16,15 @@
  */
 package org.neociclo.odetteftp.camel;
 
-import java.io.File;
-import java.util.Date;
-
 import org.apache.camel.EndpointInject;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.mock.MockEndpoint;
 import org.junit.Test;
-import org.neociclo.odetteftp.camel.OftpMessage;
 import org.neociclo.odetteftp.camel.test.BaseClientTestSupport;
 import org.neociclo.odetteftp.protocol.RecordFormat;
+
+import java.io.File;
+import java.util.Date;
 
 /**
  * @author Rafael Marins

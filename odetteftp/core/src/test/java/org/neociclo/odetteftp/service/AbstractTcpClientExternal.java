@@ -16,21 +16,6 @@
  */
 package org.neociclo.odetteftp.service;
 
-import static org.neociclo.odetteftp.protocol.RecordFormat.FIXED;
-import static org.neociclo.odetteftp.protocol.RecordFormat.UNSTRUCTURED;
-import static org.neociclo.odetteftp.protocol.RecordFormat.VARIABLE;
-import static org.neociclo.odetteftp.util.OdetteFtpConstants.DEFAULT_OFTP_PORT;
-import static org.neociclo.odetteftp.util.OdetteFtpConstants.DEFAULT_RECORD_SIZE;
-import static org.neociclo.odetteftp.util.OdetteFtpConstants.DEFAULT_SECURE_OFTP_PORT;
-
-import java.io.File;
-import java.util.Calendar;
-import java.util.Queue;
-import java.util.Random;
-import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -46,6 +31,21 @@ import org.neociclo.odetteftp.support.OdetteFtpConfiguration;
 import org.neociclo.odetteftp.support.PasswordHandler;
 import org.neociclo.odetteftp.util.ExecutorUtil;
 import org.neociclo.odetteftp.util.ProtocolUtil;
+
+import java.io.File;
+import java.util.Calendar;
+import java.util.Queue;
+import java.util.Random;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+
+import static org.neociclo.odetteftp.protocol.RecordFormat.FIXED;
+import static org.neociclo.odetteftp.protocol.RecordFormat.UNSTRUCTURED;
+import static org.neociclo.odetteftp.protocol.RecordFormat.VARIABLE;
+import static org.neociclo.odetteftp.util.OdetteFtpConstants.DEFAULT_OFTP_PORT;
+import static org.neociclo.odetteftp.util.OdetteFtpConstants.DEFAULT_RECORD_SIZE;
+import static org.neociclo.odetteftp.util.OdetteFtpConstants.DEFAULT_SECURE_OFTP_PORT;
 
 /**
  * @author Rafael Marins

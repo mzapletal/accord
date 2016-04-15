@@ -16,12 +16,12 @@
  */
 package org.neociclo.odetteftp.support;
 
-import java.io.Serializable;
-
 import org.neociclo.odetteftp.OdetteFtpSession;
 import org.neociclo.odetteftp.OdetteFtpVersion;
 import org.neociclo.odetteftp.TransferMode;
 import org.neociclo.odetteftp.protocol.v20.CipherSuite;
+
+import java.io.Serializable;
 
 /**
  * @author Rafael Marins

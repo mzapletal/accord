@@ -16,7 +16,16 @@
  */
 package org.neociclo.odetteftp.protocol.v13;
 
-import static org.neociclo.odetteftp.util.CommandFormatConstants.*;
+import org.neociclo.odetteftp.TransferMode;
+import org.neociclo.odetteftp.protocol.AnswerReason;
+import org.neociclo.odetteftp.protocol.CommandBuilder;
+import org.neociclo.odetteftp.protocol.CommandExchangeBuffer;
+import org.neociclo.odetteftp.protocol.EndSessionReason;
+import org.neociclo.odetteftp.protocol.RecordFormat;
+import org.neociclo.odetteftp.util.ProtocolUtil;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import static org.neociclo.odetteftp.protocol.CommandIdentifier.EERP;
 import static org.neociclo.odetteftp.protocol.CommandIdentifier.EFID;
@@ -36,17 +45,52 @@ import static org.neociclo.odetteftp.protocol.v13.ReleaseFormatVer13.SFID_V13;
 import static org.neociclo.odetteftp.protocol.v13.ReleaseFormatVer13.SFNA_V13;
 import static org.neociclo.odetteftp.protocol.v13.ReleaseFormatVer13.SFPA_V13;
 import static org.neociclo.odetteftp.protocol.v13.ReleaseFormatVer13.SSID_V13;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import org.neociclo.odetteftp.TransferMode;
-import org.neociclo.odetteftp.protocol.AnswerReason;
-import org.neociclo.odetteftp.protocol.CommandBuilder;
-import org.neociclo.odetteftp.protocol.CommandExchangeBuffer;
-import org.neociclo.odetteftp.protocol.EndSessionReason;
-import org.neociclo.odetteftp.protocol.RecordFormat;
-import org.neociclo.odetteftp.util.ProtocolUtil;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPCMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPDATE_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPDEST_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPDSN_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPORIG_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPTIME_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPUSER_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EFIDCMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EFIDRCNT_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EFIDUCNT_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EFNACMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EFNAREAS_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EFPACD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EFPACMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.ESIDCMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.ESIDCR_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.ESIDREAS_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.PROTOCOL_CARRIAGE_RETURN;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDCMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDDATE_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDDEST_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDDSN_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDFMT_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDFSIZ_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDLRECL_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDORIG_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDREST_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDTIME_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDUSER_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFNACMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFNAREAS_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFNARRTR_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFPAACNT_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFPACMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDCMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDCMPR_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDCODE_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDCRED_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDCR_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDLEV_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDPSWD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDREST_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDSDEB_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDSPEC_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDSR_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDUSER_FIELD;
 
 /**
  * @author Rafael Marins

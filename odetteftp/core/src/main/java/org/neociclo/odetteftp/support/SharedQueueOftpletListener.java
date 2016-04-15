@@ -16,16 +16,16 @@
  */
 package org.neociclo.odetteftp.support;
 
-import java.util.Queue;
-
 import org.neociclo.odetteftp.oftplet.AnswerReasonInfo;
-import org.neociclo.odetteftp.protocol.DefaultEndFileResponse;
 import org.neociclo.odetteftp.oftplet.EndFileResponse;
 import org.neociclo.odetteftp.oftplet.OftpletListener;
 import org.neociclo.odetteftp.oftplet.StartFileResponse;
+import org.neociclo.odetteftp.protocol.DefaultEndFileResponse;
 import org.neociclo.odetteftp.protocol.DeliveryNotification;
 import org.neociclo.odetteftp.protocol.OdetteFtpObject;
 import org.neociclo.odetteftp.protocol.VirtualFile;
+
+import java.util.Queue;
 
 /**
  * @author Rafael Marins

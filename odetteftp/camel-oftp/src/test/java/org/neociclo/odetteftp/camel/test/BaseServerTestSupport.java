@@ -16,22 +16,6 @@
  */
 package org.neociclo.odetteftp.camel.test;
 
-import static org.neociclo.odetteftp.examples.server.SimpleServerHelper.*;
-import static org.neociclo.odetteftp.protocol.v20.CipherSuite.NO_CIPHER_SUITE_SELECTION;
-import static org.neociclo.odetteftp.protocol.v20.FileCompression.NO_COMPRESSION;
-import static org.neociclo.odetteftp.protocol.v20.FileEnveloping.NO_ENVELOPE;
-import static org.neociclo.odetteftp.protocol.v20.SecurityLevel.NO_SECURITY_SERVICES;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDDSN_FIELD;
-
-import java.io.File;
-import java.io.IOException;
-import java.net.InetSocketAddress;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-
 import org.apache.camel.util.ObjectHelper;
 import org.neociclo.odetteftp.TransferMode;
 import org.neociclo.odetteftp.examples.server.SimpleServerOftpletFactory;
@@ -57,6 +41,28 @@ import org.neociclo.odetteftp.support.PasswordHandler;
 import org.neociclo.odetteftp.util.IoUtil;
 import org.neociclo.odetteftp.util.ProtocolUtil;
 import org.neociclo.odetteftp.util.TimestampTicker;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.neociclo.odetteftp.examples.server.SimpleServerHelper.createDataFile;
+import static org.neociclo.odetteftp.examples.server.SimpleServerHelper.createUserDirStructureIfNotExist;
+import static org.neociclo.odetteftp.examples.server.SimpleServerHelper.deleteExchange;
+import static org.neociclo.odetteftp.examples.server.SimpleServerHelper.hasExchange;
+import static org.neociclo.odetteftp.examples.server.SimpleServerHelper.listExchanges;
+import static org.neociclo.odetteftp.examples.server.SimpleServerHelper.loadObject;
+import static org.neociclo.odetteftp.examples.server.SimpleServerHelper.storeInMailbox;
+import static org.neociclo.odetteftp.protocol.v20.CipherSuite.NO_CIPHER_SUITE_SELECTION;
+import static org.neociclo.odetteftp.protocol.v20.FileCompression.NO_COMPRESSION;
+import static org.neociclo.odetteftp.protocol.v20.FileEnveloping.NO_ENVELOPE;
+import static org.neociclo.odetteftp.protocol.v20.SecurityLevel.NO_SECURITY_SERVICES;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDDSN_FIELD;
 
 /**
  * @author Rafael Marins

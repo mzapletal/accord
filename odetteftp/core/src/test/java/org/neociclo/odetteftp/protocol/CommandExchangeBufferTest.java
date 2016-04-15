@@ -16,20 +16,6 @@
  */
 package org.neociclo.odetteftp.protocol;
 
-import static org.neociclo.odetteftp.protocol.CommandExchangeBuffer.*;
-import static org.neociclo.odetteftp.util.ProtocolUtil.*;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.*;
-
-import static org.junit.Assert.*;
-import static org.neociclo.odetteftp.protocol.CommandIdentifier.*;
-import static org.neociclo.odetteftp.protocol.v20.CommandBuilderVer20.startFile;
-import static org.neociclo.odetteftp.protocol.v20.ReleaseFormatVer20.*;
-import static org.neociclo.odetteftp.protocol.v14.ReleaseFormatVer14.*;
-
-import java.nio.ByteBuffer;
-import java.util.Arrays;
-import java.util.Calendar;
-
 import org.jboss.netty.buffer.ChannelBuffer;
 import org.jboss.netty.buffer.ChannelBuffers;
 import org.jboss.netty.buffer.HeapChannelBufferFactory;
@@ -42,6 +28,50 @@ import org.neociclo.odetteftp.protocol.v20.FileCompression;
 import org.neociclo.odetteftp.protocol.v20.FileEnveloping;
 import org.neociclo.odetteftp.protocol.v20.SecurityLevel;
 import org.neociclo.odetteftp.util.ProtocolUtil;
+
+import java.nio.ByteBuffer;
+import java.util.Arrays;
+import java.util.Calendar;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.neociclo.odetteftp.protocol.CommandExchangeBuffer.DEFAULT_PROTOCOL_CHARSET;
+import static org.neociclo.odetteftp.protocol.CommandIdentifier.EERP;
+import static org.neociclo.odetteftp.protocol.CommandIdentifier.EFID;
+import static org.neociclo.odetteftp.protocol.CommandIdentifier.ESID;
+import static org.neociclo.odetteftp.protocol.CommandIdentifier.SFID;
+import static org.neociclo.odetteftp.protocol.CommandIdentifier.SSID;
+import static org.neociclo.odetteftp.protocol.v14.ReleaseFormatVer14.SSID_V14;
+import static org.neociclo.odetteftp.protocol.v20.CommandBuilderVer20.startFile;
+import static org.neociclo.odetteftp.protocol.v20.ReleaseFormatVer20.EERP_V20;
+import static org.neociclo.odetteftp.protocol.v20.ReleaseFormatVer20.ESID_V20;
+import static org.neociclo.odetteftp.protocol.v20.ReleaseFormatVer20.SFID_V20;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPCMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPDATE_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPDEST_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPDSN_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPHSHL_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPHSH_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPORIG_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPRSV1_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPSIGL_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPSIG_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPTIME_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPUSER_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDCMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDCMPR_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDCODE_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDCRED_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDCR_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDLEV_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDPSWD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDREST_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDRSV1_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDSDEB_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDSR_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDUSER_FIELD;
+import static org.neociclo.odetteftp.util.ProtocolUtil.formatBinaryNumber;
 
 /**
  * @author Rafael Marins

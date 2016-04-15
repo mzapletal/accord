@@ -16,12 +16,12 @@
  */
 package org.neociclo.odetteftp.util;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
 import org.neociclo.odetteftp.protocol.CommandExchangeBuffer;
 import org.neociclo.odetteftp.protocol.CommandFormat.Field;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * @author Rafael Marins

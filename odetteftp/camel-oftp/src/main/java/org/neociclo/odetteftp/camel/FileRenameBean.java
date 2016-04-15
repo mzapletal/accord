@@ -17,9 +17,9 @@
  */
 package org.neociclo.odetteftp.camel;
 
-import java.text.SimpleDateFormat;
-
 import org.neociclo.odetteftp.protocol.VirtualFile;
+
+import java.text.SimpleDateFormat;
 
 public class FileRenameBean {
 

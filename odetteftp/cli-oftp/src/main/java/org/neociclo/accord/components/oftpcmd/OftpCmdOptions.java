@@ -1,14 +1,14 @@
 package org.neociclo.accord.components.oftpcmd;
 
-import java.io.File;
-import java.lang.reflect.Field;
-import java.util.Date;
-
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.neociclo.accord.components.oftpcmd.CommandOptionConverter.NullConverter;
 import org.neociclo.odetteftp.TransferMode;
+
+import java.io.File;
+import java.lang.reflect.Field;
+import java.util.Date;
 
 public class OftpCmdOptions implements OftpParameters {
 

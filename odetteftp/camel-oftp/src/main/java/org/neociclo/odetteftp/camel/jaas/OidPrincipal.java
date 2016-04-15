@@ -16,9 +16,9 @@
  */
 package org.neociclo.odetteftp.camel.jaas;
 
-import java.security.Principal;
-
 import org.apache.camel.util.ObjectHelper;
+
+import java.security.Principal;
 
 /**
  * @author Rafael Marins

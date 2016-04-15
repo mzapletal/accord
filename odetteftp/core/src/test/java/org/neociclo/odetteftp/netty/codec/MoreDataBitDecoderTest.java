@@ -16,14 +16,16 @@
  */
 package org.neociclo.odetteftp.netty.codec;
 
-import static org.junit.Assert.*;
-import static org.jboss.netty.buffer.ChannelBuffers.*;
-import static org.neociclo.odetteftp.protocol.CommandExchangeBuffer.DEFAULT_PROTOCOL_CHARSET;
-
 import org.jboss.netty.buffer.ChannelBuffer;
 import org.jboss.netty.handler.codec.embedder.DecoderEmbedder;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.jboss.netty.buffer.ChannelBuffers.buffer;
+import static org.jboss.netty.buffer.ChannelBuffers.wrappedBuffer;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.neociclo.odetteftp.protocol.CommandExchangeBuffer.DEFAULT_PROTOCOL_CHARSET;
 
 /**
  * @author Rafael Marins

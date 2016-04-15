@@ -1,10 +1,5 @@
 package org.neociclo.accord.components;
 
-import static org.junit.Assert.assertTrue;
-
-import java.io.File;
-import java.lang.reflect.Field;
-
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.PosixParser;
@@ -12,6 +7,11 @@ import org.junit.Test;
 import org.neociclo.accord.components.oftpcmd.CommandLineOption;
 import org.neociclo.accord.components.oftpcmd.OftpCmdOptions;
 import org.neociclo.odetteftp.TransferMode;
+
+import java.io.File;
+import java.lang.reflect.Field;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * Unit test for simple App.

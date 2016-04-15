@@ -16,14 +16,14 @@
  */
 package org.neociclo.odetteftp.camel;
 
-import java.io.File;
-import java.io.IOException;
-
-import org.neociclo.odetteftp.protocol.DefaultStartFileResponse;
 import org.neociclo.odetteftp.oftplet.StartFileResponse;
 import org.neociclo.odetteftp.protocol.AnswerReason;
+import org.neociclo.odetteftp.protocol.DefaultStartFileResponse;
 import org.neociclo.odetteftp.protocol.VirtualFile;
 import org.neociclo.odetteftp.support.OftpletEventListenerAdapter;
+
+import java.io.File;
+import java.io.IOException;
 
 /**
  * @author Rafael Marins

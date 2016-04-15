@@ -16,19 +16,19 @@
  */
 package org.neociclo.odetteftp.util;
 
-import static org.neociclo.odetteftp.EntityState.LISTENER;
-import static org.neociclo.odetteftp.EntityState.SPEAKER;
-import static org.neociclo.odetteftp.EntityType.INITIATOR;
-import static org.neociclo.odetteftp.EntityType.RESPONDER;
-import static org.neociclo.odetteftp.util.OdetteFtpConstants.DEFAULT_RECORD_SIZE;
+import org.neociclo.odetteftp.EntityState;
+import org.neociclo.odetteftp.EntityType;
+import org.neociclo.odetteftp.protocol.RecordFormat;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import org.neociclo.odetteftp.EntityState;
-import org.neociclo.odetteftp.EntityType;
-import org.neociclo.odetteftp.protocol.RecordFormat;
+import static org.neociclo.odetteftp.EntityState.LISTENER;
+import static org.neociclo.odetteftp.EntityState.SPEAKER;
+import static org.neociclo.odetteftp.EntityType.INITIATOR;
+import static org.neociclo.odetteftp.EntityType.RESPONDER;
+import static org.neociclo.odetteftp.util.OdetteFtpConstants.DEFAULT_RECORD_SIZE;
 
 /**
  * @author Rafael Marins

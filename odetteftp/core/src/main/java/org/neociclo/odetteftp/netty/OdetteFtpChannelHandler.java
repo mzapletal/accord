@@ -16,6 +16,43 @@
  */
 package org.neociclo.odetteftp.netty;
 
+import org.jboss.netty.buffer.ChannelBuffers;
+import org.jboss.netty.channel.Channel;
+import org.jboss.netty.channel.ChannelFuture;
+import org.jboss.netty.channel.ChannelFutureListener;
+import org.jboss.netty.channel.ChannelHandler.Sharable;
+import org.jboss.netty.channel.ChannelHandlerContext;
+import org.jboss.netty.channel.ChannelPipeline;
+import org.jboss.netty.channel.ChannelStateEvent;
+import org.jboss.netty.channel.ExceptionEvent;
+import org.jboss.netty.channel.MessageEvent;
+import org.jboss.netty.channel.group.ChannelGroup;
+import org.jboss.netty.handler.timeout.IdleStateAwareChannelHandler;
+import org.jboss.netty.handler.timeout.IdleStateEvent;
+import org.jboss.netty.handler.timeout.IdleStateHandler;
+import org.jboss.netty.handler.timeout.ReadTimeoutHandler;
+import org.jboss.netty.util.Timer;
+import org.neociclo.odetteftp.EntityType;
+import org.neociclo.odetteftp.OdetteFtpException;
+import org.neociclo.odetteftp.OdetteFtpSession;
+import org.neociclo.odetteftp.OdetteFtpVersion;
+import org.neociclo.odetteftp.ProtocolHandler;
+import org.neociclo.odetteftp.netty.codec.SpecialLogicDecoder;
+import org.neociclo.odetteftp.netty.codec.SpecialLogicEncoder;
+import org.neociclo.odetteftp.oftplet.ChannelCallback;
+import org.neociclo.odetteftp.oftplet.Oftplet;
+import org.neociclo.odetteftp.oftplet.OftpletFactory;
+import org.neociclo.odetteftp.protocol.CommandExchangeBuffer;
+import org.neociclo.odetteftp.protocol.CommandIdentifier;
+import org.neociclo.odetteftp.protocol.DataExchangeBuffer;
+import org.neociclo.odetteftp.protocol.EndSessionReason;
+import org.neociclo.odetteftp.protocol.OdetteFtpExchangeBuffer;
+import org.neociclo.odetteftp.util.OdetteFtpConstants;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.concurrent.TimeUnit;
+
 import static org.neociclo.odetteftp.ProtocolHandlerFactory.getProtocolHandlerByVersion;
 import static org.neociclo.odetteftp.protocol.CommandIdentifier.AUCH;
 import static org.neociclo.odetteftp.protocol.CommandIdentifier.AURP;
@@ -38,39 +75,6 @@ import static org.neociclo.odetteftp.protocol.CommandIdentifier.SSRM;
 import static org.neociclo.odetteftp.util.OdetteFtpConstants.DEFAULT_OFTP_ENTITY_TYPE;
 import static org.neociclo.odetteftp.util.SessionHelper.getSessionOftplet;
 import static org.neociclo.odetteftp.util.SessionHelper.setSessionOftplet;
-
-import java.util.concurrent.TimeUnit;
-
-import org.jboss.netty.buffer.ChannelBuffers;
-import org.jboss.netty.channel.Channel;
-import org.jboss.netty.channel.ChannelFuture;
-import org.jboss.netty.channel.ChannelFutureListener;
-import org.jboss.netty.channel.ChannelHandler.Sharable;
-import org.jboss.netty.channel.ChannelHandlerContext;
-import org.jboss.netty.channel.ChannelPipeline;
-import org.jboss.netty.channel.ChannelStateEvent;
-import org.jboss.netty.channel.ExceptionEvent;
-import org.jboss.netty.channel.MessageEvent;
-import org.jboss.netty.channel.group.ChannelGroup;
-import org.jboss.netty.handler.timeout.IdleStateAwareChannelHandler;
-import org.jboss.netty.handler.timeout.IdleStateEvent;
-import org.jboss.netty.handler.timeout.IdleStateHandler;
-import org.jboss.netty.handler.timeout.ReadTimeoutHandler;
-import org.jboss.netty.util.Timer;
-import org.neociclo.odetteftp.*;
-import org.neociclo.odetteftp.netty.codec.SpecialLogicDecoder;
-import org.neociclo.odetteftp.netty.codec.SpecialLogicEncoder;
-import org.neociclo.odetteftp.oftplet.ChannelCallback;
-import org.neociclo.odetteftp.oftplet.Oftplet;
-import org.neociclo.odetteftp.oftplet.OftpletFactory;
-import org.neociclo.odetteftp.protocol.CommandExchangeBuffer;
-import org.neociclo.odetteftp.protocol.CommandIdentifier;
-import org.neociclo.odetteftp.protocol.DataExchangeBuffer;
-import org.neociclo.odetteftp.protocol.EndSessionReason;
-import org.neociclo.odetteftp.protocol.OdetteFtpExchangeBuffer;
-import org.neociclo.odetteftp.util.OdetteFtpConstants;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * The {@link Timer} which was specified when the {@link ReadTimeoutHandler} is

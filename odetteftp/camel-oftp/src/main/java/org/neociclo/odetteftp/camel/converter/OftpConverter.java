@@ -16,13 +16,6 @@
  */
 package org.neociclo.odetteftp.camel.converter;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Date;
-
 import org.apache.camel.Converter;
 import org.apache.camel.Exchange;
 import org.apache.camel.Message;
@@ -34,6 +27,13 @@ import org.neociclo.odetteftp.protocol.DefaultVirtualFile;
 import org.neociclo.odetteftp.protocol.OdetteFtpObject;
 import org.neociclo.odetteftp.protocol.VirtualFile;
 import org.neociclo.odetteftp.protocol.v20.CipherSuite;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Date;
 
 /**
  * @author Rafael Marins

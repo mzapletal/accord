@@ -16,15 +16,6 @@
  */
 package org.neociclo.odetteftp.examples.server;
 
-import static org.neociclo.odetteftp.examples.server.SimpleServerHelper.getUserConfigFile;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.net.InetSocketAddress;
-import java.net.URISyntaxException;
-import java.net.URL;
-
 import org.neociclo.odetteftp.OdetteFtpSession;
 import org.neociclo.odetteftp.OdetteFtpVersion;
 import org.neociclo.odetteftp.TransferMode;
@@ -37,6 +28,15 @@ import org.neociclo.odetteftp.support.OdetteFtpConfiguration;
 import org.neociclo.odetteftp.support.OftpletEventListenerAdapter;
 import org.neociclo.odetteftp.support.PasswordHandler;
 import org.neociclo.odetteftp.support.PropertiesBasedConfiguration;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.net.URISyntaxException;
+import java.net.URL;
+
+import static org.neociclo.odetteftp.examples.server.SimpleServerHelper.getUserConfigFile;
 
 /**
  * @author Rafael Marins

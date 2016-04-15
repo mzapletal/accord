@@ -16,21 +16,6 @@
  */
 package org.neociclo.odetteftp.util;
 
-import static org.neociclo.odetteftp.util.SecurityUtil.*;
-
-import java.math.BigInteger;
-import java.security.KeyPair;
-import java.security.KeyPairGenerator;
-import java.security.KeyStore;
-import java.security.PrivateKey;
-import java.security.PublicKey;
-import java.security.SecureRandom;
-import java.security.cert.Certificate;
-import java.security.cert.X509Certificate;
-import java.util.Date;
-
-import javax.security.auth.x500.X500PrivateCredential;
-
 import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.asn1.x509.BasicConstraints;
 import org.bouncycastle.asn1.x509.Extension;
@@ -45,6 +30,22 @@ import org.bouncycastle.cert.jcajce.JcaX509ExtensionUtils;
 import org.bouncycastle.operator.ContentSigner;
 import org.bouncycastle.operator.DefaultSignatureAlgorithmIdentifierFinder;
 import org.bouncycastle.operator.jcajce.JcaContentSignerBuilder;
+
+import java.math.BigInteger;
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
+import java.security.KeyStore;
+import java.security.PrivateKey;
+import java.security.PublicKey;
+import java.security.SecureRandom;
+import java.security.cert.Certificate;
+import java.security.cert.X509Certificate;
+import java.util.Date;
+
+import javax.security.auth.x500.X500PrivateCredential;
+
+import static org.neociclo.odetteftp.util.SecurityUtil.BC_PROVIDER;
+import static org.neociclo.odetteftp.util.SecurityUtil.installBouncyCastleProviderIfNecessary;
 
 /**
  * @author Rafael Marins

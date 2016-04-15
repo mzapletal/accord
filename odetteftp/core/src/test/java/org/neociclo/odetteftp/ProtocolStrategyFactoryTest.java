@@ -16,11 +16,13 @@
  */
 package org.neociclo.odetteftp;
 
-import static org.junit.Assert.*;
-import static org.neociclo.odetteftp.OdetteFtpVersion.*;
-
 import org.junit.Test;
-import org.neociclo.odetteftp.ProtocolHandlerFactory;
+
+import static org.junit.Assert.assertTrue;
+import static org.neociclo.odetteftp.OdetteFtpVersion.OFTP_V12;
+import static org.neociclo.odetteftp.OdetteFtpVersion.OFTP_V13;
+import static org.neociclo.odetteftp.OdetteFtpVersion.OFTP_V14;
+import static org.neociclo.odetteftp.OdetteFtpVersion.OFTP_V20;
 
 /**
  * @author Rafael Marins

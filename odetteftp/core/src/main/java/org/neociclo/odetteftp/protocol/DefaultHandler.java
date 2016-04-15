@@ -16,52 +16,6 @@
  */
 package org.neociclo.odetteftp.protocol;
 
-import static org.neociclo.odetteftp.OdetteFtpVersion.OFTP_V14;
-import static org.neociclo.odetteftp.protocol.AnswerReason.ACCESS_METHOD_FAILURE;
-import static org.neociclo.odetteftp.protocol.AnswerReason.INVALID_BYTE_COUNT;
-import static org.neociclo.odetteftp.protocol.AnswerReason.INVALID_RECORD_COUNT;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.EFIDRCNT_FIELD;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.EFIDUCNT_FIELD;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.EFPACD_FIELD;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDDSN_FIELD;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.SFNARRTR_FIELD;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.SFPAACNT_FIELD;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDCMPR_FIELD;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDCODE_FIELD;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDCRED_FIELD;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDLEV_FIELD;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDPSWD_FIELD;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDREST_FIELD;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDSDEB_FIELD;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDSPEC_FIELD;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDSR_FIELD;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDUSER_FIELD;
-import static org.neociclo.odetteftp.util.OdetteFtpConstants.MAX_OEB_LENGTH;
-import static org.neociclo.odetteftp.util.OdetteFtpConstants.MIN_OEB_LENGTH;
-import static org.neociclo.odetteftp.util.ProtocolUtil.computeVirtualFileRecordCount;
-import static org.neociclo.odetteftp.util.ProtocolUtil.valueOfYesNo;
-import static org.neociclo.odetteftp.util.SessionHelper.getSessionCurrentRequest;
-import static org.neociclo.odetteftp.util.SessionHelper.getSessionFileChannel;
-import static org.neociclo.odetteftp.util.SessionHelper.getSessionOftplet;
-import static org.neociclo.odetteftp.util.SessionHelper.getSessionOutgoingDataExchangeBuffer;
-import static org.neociclo.odetteftp.util.SessionHelper.isInitiator;
-import static org.neociclo.odetteftp.util.SessionHelper.isReceivingSupported;
-import static org.neociclo.odetteftp.util.SessionHelper.isSendingSupported;
-import static org.neociclo.odetteftp.util.SessionHelper.setSessionCurrentRequest;
-import static org.neociclo.odetteftp.util.SessionHelper.setSessionFileChannel;
-import static org.neociclo.odetteftp.util.SessionHelper.setSessionOutgoingDataExchangeBuffer;
-import static org.neociclo.odetteftp.util.OdetteFtpConstants.DEFAULT_RECORD_SIZE;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.nio.channels.FileChannel;
-import java.util.Date;
-
-import javax.security.auth.callback.Callback;
-import javax.security.auth.callback.CallbackHandler;
-
 import org.neociclo.odetteftp.OdetteFtpException;
 import org.neociclo.odetteftp.OdetteFtpSession;
 import org.neociclo.odetteftp.OdetteFtpVersion;
@@ -84,6 +38,52 @@ import org.neociclo.odetteftp.security.SecurityContext;
 import org.neociclo.odetteftp.util.ProtocolUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.channels.FileChannel;
+import java.util.Date;
+
+import javax.security.auth.callback.Callback;
+import javax.security.auth.callback.CallbackHandler;
+
+import static org.neociclo.odetteftp.OdetteFtpVersion.OFTP_V14;
+import static org.neociclo.odetteftp.protocol.AnswerReason.ACCESS_METHOD_FAILURE;
+import static org.neociclo.odetteftp.protocol.AnswerReason.INVALID_BYTE_COUNT;
+import static org.neociclo.odetteftp.protocol.AnswerReason.INVALID_RECORD_COUNT;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EFIDRCNT_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EFIDUCNT_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EFPACD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDDSN_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFNARRTR_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFPAACNT_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDCMPR_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDCODE_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDCRED_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDLEV_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDPSWD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDREST_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDSDEB_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDSPEC_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDSR_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDUSER_FIELD;
+import static org.neociclo.odetteftp.util.OdetteFtpConstants.DEFAULT_RECORD_SIZE;
+import static org.neociclo.odetteftp.util.OdetteFtpConstants.MAX_OEB_LENGTH;
+import static org.neociclo.odetteftp.util.OdetteFtpConstants.MIN_OEB_LENGTH;
+import static org.neociclo.odetteftp.util.ProtocolUtil.computeVirtualFileRecordCount;
+import static org.neociclo.odetteftp.util.ProtocolUtil.valueOfYesNo;
+import static org.neociclo.odetteftp.util.SessionHelper.getSessionCurrentRequest;
+import static org.neociclo.odetteftp.util.SessionHelper.getSessionFileChannel;
+import static org.neociclo.odetteftp.util.SessionHelper.getSessionOftplet;
+import static org.neociclo.odetteftp.util.SessionHelper.getSessionOutgoingDataExchangeBuffer;
+import static org.neociclo.odetteftp.util.SessionHelper.isInitiator;
+import static org.neociclo.odetteftp.util.SessionHelper.isReceivingSupported;
+import static org.neociclo.odetteftp.util.SessionHelper.isSendingSupported;
+import static org.neociclo.odetteftp.util.SessionHelper.setSessionCurrentRequest;
+import static org.neociclo.odetteftp.util.SessionHelper.setSessionFileChannel;
+import static org.neociclo.odetteftp.util.SessionHelper.setSessionOutgoingDataExchangeBuffer;
 
 /**
  * @author Rafael Marins

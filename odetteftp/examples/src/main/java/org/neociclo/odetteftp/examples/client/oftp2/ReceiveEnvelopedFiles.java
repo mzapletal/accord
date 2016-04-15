@@ -16,28 +16,12 @@
  */
 package org.neociclo.odetteftp.examples.client.oftp2;
 
-import static org.neociclo.odetteftp.TransferMode.RECEIVER_ONLY;
-import static org.neociclo.odetteftp.protocol.AnswerReason.DUPLICATE_FILE;
-import static org.neociclo.odetteftp.protocol.v20.SecurityLevel.ENCRYPTED;
-import static org.neociclo.odetteftp.protocol.v20.SecurityLevel.ENCRYPTED_AND_SIGNED;
-import static org.neociclo.odetteftp.protocol.v20.SecurityLevel.SIGNED;
-import static org.neociclo.odetteftp.util.OdetteFtpSupport.getReplyDeliveryNotification;
-import static org.neociclo.odetteftp.util.OdetteFtpSupport.parseEnvelopedFile;
-
-import java.io.File;
-import java.io.IOException;
-import java.security.KeyStore;
-import java.security.PrivateKey;
-import java.security.cert.X509Certificate;
-import java.util.Queue;
-import java.util.concurrent.ConcurrentLinkedQueue;
-
 import org.neociclo.odetteftp.OdetteFtpVersion;
 import org.neociclo.odetteftp.examples.MainSupport;
-import org.neociclo.odetteftp.protocol.DefaultEndFileResponse;
-import org.neociclo.odetteftp.protocol.DefaultStartFileResponse;
 import org.neociclo.odetteftp.oftplet.EndFileResponse;
 import org.neociclo.odetteftp.oftplet.StartFileResponse;
+import org.neociclo.odetteftp.protocol.DefaultEndFileResponse;
+import org.neociclo.odetteftp.protocol.DefaultStartFileResponse;
 import org.neociclo.odetteftp.protocol.OdetteFtpObject;
 import org.neociclo.odetteftp.protocol.VirtualFile;
 import org.neociclo.odetteftp.protocol.v20.DefaultSignedDeliveryNotification;
@@ -53,6 +37,22 @@ import org.neociclo.odetteftp.support.PasswordHandler;
 import org.neociclo.odetteftp.util.EnvelopingException;
 import org.neociclo.odetteftp.util.EnvelopingUtil;
 import org.neociclo.odetteftp.util.SecurityUtil;
+
+import java.io.File;
+import java.io.IOException;
+import java.security.KeyStore;
+import java.security.PrivateKey;
+import java.security.cert.X509Certificate;
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
+
+import static org.neociclo.odetteftp.TransferMode.RECEIVER_ONLY;
+import static org.neociclo.odetteftp.protocol.AnswerReason.DUPLICATE_FILE;
+import static org.neociclo.odetteftp.protocol.v20.SecurityLevel.ENCRYPTED;
+import static org.neociclo.odetteftp.protocol.v20.SecurityLevel.ENCRYPTED_AND_SIGNED;
+import static org.neociclo.odetteftp.protocol.v20.SecurityLevel.SIGNED;
+import static org.neociclo.odetteftp.util.OdetteFtpSupport.getReplyDeliveryNotification;
+import static org.neociclo.odetteftp.util.OdetteFtpSupport.parseEnvelopedFile;
 
 /**
  * @author Rafael Marins

@@ -16,12 +16,12 @@
  */
 package org.neociclo.odetteftp.support;
 
-import java.util.EventListener;
-
 import org.neociclo.odetteftp.OdetteFtpException;
 import org.neociclo.odetteftp.OdetteFtpSession;
 import org.neociclo.odetteftp.oftplet.OftpletListener;
 import org.neociclo.odetteftp.oftplet.OftpletSpeaker;
+
+import java.util.EventListener;
 
 /**
  * @author Rafael Marins

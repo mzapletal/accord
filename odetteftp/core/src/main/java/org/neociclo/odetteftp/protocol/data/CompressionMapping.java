@@ -16,14 +16,6 @@
  */
 package org.neociclo.odetteftp.protocol.data;
 
-import static org.neociclo.odetteftp.protocol.RecordFormat.FIXED;
-
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.channels.FileChannel;
-import java.util.Arrays;
-import java.util.Iterator;
-
 import org.neociclo.odetteftp.OdetteFtpException;
 import org.neociclo.odetteftp.protocol.DataExchangeBuffer;
 import org.neociclo.odetteftp.protocol.DataExchangeBuffer.SubrecordHeader;
@@ -34,6 +26,14 @@ import org.neociclo.odetteftp.protocol.VirtualFileMappingException;
 import org.neociclo.odetteftp.util.BufferUtil;
 import org.neociclo.odetteftp.util.ByteBufferFactory;
 import org.neociclo.odetteftp.util.ProtocolUtil;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
+import java.util.Arrays;
+import java.util.Iterator;
+
+import static org.neociclo.odetteftp.protocol.RecordFormat.FIXED;
 
 /**
  * @author Rafael Marins

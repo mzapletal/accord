@@ -16,8 +16,6 @@
  */
 package org.neociclo.odetteftp.support;
 
-import java.util.Queue;
-
 import org.neociclo.odetteftp.OdetteFtpException;
 import org.neociclo.odetteftp.OdetteFtpSession;
 import org.neociclo.odetteftp.OdetteFtpVersion;
@@ -29,6 +27,8 @@ import org.neociclo.odetteftp.protocol.OdetteFtpObject;
 import org.neociclo.odetteftp.security.DefaultSecurityContext;
 import org.neociclo.odetteftp.security.MappedCallbackHandler;
 import org.neociclo.odetteftp.security.SecurityContext;
+
+import java.util.Queue;
 
 /**
  * @author Rafael Marins

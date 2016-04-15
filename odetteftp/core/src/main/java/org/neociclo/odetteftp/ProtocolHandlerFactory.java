@@ -16,14 +16,14 @@
  */
 package org.neociclo.odetteftp;
 
+import org.neociclo.odetteftp.protocol.v13.OdetteFtpVer13Handler;
+import org.neociclo.odetteftp.protocol.v14.OdetteFtpVer14Handler;
+import org.neociclo.odetteftp.protocol.v20.OdetteFtpVer20Handler;
+
 import static org.neociclo.odetteftp.OdetteFtpVersion.OFTP_V12;
 import static org.neociclo.odetteftp.OdetteFtpVersion.OFTP_V13;
 import static org.neociclo.odetteftp.OdetteFtpVersion.OFTP_V14;
 import static org.neociclo.odetteftp.OdetteFtpVersion.OFTP_V20;
-
-import org.neociclo.odetteftp.protocol.v13.OdetteFtpVer13Handler;
-import org.neociclo.odetteftp.protocol.v14.OdetteFtpVer14Handler;
-import org.neociclo.odetteftp.protocol.v20.OdetteFtpVer20Handler;
 
 /**
  * @author Rafael Marins

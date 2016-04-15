@@ -16,9 +16,9 @@
  */
 package org.neociclo.odetteftp.service;
 
-import java.util.Map;
-
 import org.neociclo.odetteftp.protocol.VirtualFile;
+
+import java.util.Map;
 
 /**
  * @author Rafael Marins

@@ -17,13 +17,13 @@
  */
 package org.neociclo.odetteftp.camel;
 
+import org.apache.camel.util.jndi.CamelInitialContextFactory;
+
 import java.util.Hashtable;
 import java.util.Map;
 
 import javax.naming.Context;
 import javax.naming.NamingException;
-
-import org.apache.camel.util.jndi.CamelInitialContextFactory;
 
 public class InitialTestContextFactory extends CamelInitialContextFactory {
 

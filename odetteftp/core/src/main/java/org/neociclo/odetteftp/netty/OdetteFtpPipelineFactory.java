@@ -16,9 +16,6 @@
  */
 package org.neociclo.odetteftp.netty;
 
-import static org.neociclo.odetteftp.TransportType.*;
-import static org.jboss.netty.channel.Channels.pipeline;
-
 import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.channel.ChannelPipeline;
 import org.jboss.netty.channel.ChannelPipelineException;
@@ -40,6 +37,10 @@ import org.neociclo.odetteftp.netty.codec.StbEncoder;
 import org.neociclo.odetteftp.oftplet.OftpletFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static org.jboss.netty.channel.Channels.pipeline;
+import static org.neociclo.odetteftp.TransportType.TCPIP;
+import static org.neociclo.odetteftp.TransportType.X25_MBGW;
 
 /**
  * The default OFTP channel pipeline factory: works for TCPIP and X25

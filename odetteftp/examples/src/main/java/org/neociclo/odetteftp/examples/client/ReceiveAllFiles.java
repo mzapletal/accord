@@ -16,19 +16,11 @@
  */
 package org.neociclo.odetteftp.examples.client;
 
-import static org.neociclo.odetteftp.TransferMode.RECEIVER_ONLY;
-import static org.neociclo.odetteftp.protocol.AnswerReason.DUPLICATE_FILE;
-import static org.neociclo.odetteftp.util.OdetteFtpSupport.getReplyDeliveryNotification;
-
-import java.io.File;
-import java.util.Queue;
-import java.util.concurrent.ConcurrentLinkedQueue;
-
 import org.neociclo.odetteftp.examples.MainSupport;
-import org.neociclo.odetteftp.protocol.DefaultEndFileResponse;
-import org.neociclo.odetteftp.protocol.DefaultStartFileResponse;
 import org.neociclo.odetteftp.oftplet.EndFileResponse;
 import org.neociclo.odetteftp.oftplet.StartFileResponse;
+import org.neociclo.odetteftp.protocol.DefaultEndFileResponse;
+import org.neociclo.odetteftp.protocol.DefaultStartFileResponse;
 import org.neociclo.odetteftp.protocol.DeliveryNotification;
 import org.neociclo.odetteftp.protocol.OdetteFtpObject;
 import org.neociclo.odetteftp.protocol.VirtualFile;
@@ -39,6 +31,14 @@ import org.neociclo.odetteftp.support.InOutSharedQueueOftpletFactory;
 import org.neociclo.odetteftp.support.OdetteFtpConfiguration;
 import org.neociclo.odetteftp.support.OftpletEventListenerAdapter;
 import org.neociclo.odetteftp.support.PasswordHandler;
+
+import java.io.File;
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
+
+import static org.neociclo.odetteftp.TransferMode.RECEIVER_ONLY;
+import static org.neociclo.odetteftp.protocol.AnswerReason.DUPLICATE_FILE;
+import static org.neociclo.odetteftp.util.OdetteFtpSupport.getReplyDeliveryNotification;
 
 /**
  * @author Rafael Marins

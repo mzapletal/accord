@@ -16,11 +16,11 @@
  */
 package org.neociclo.odetteftp.util;
 
-import static org.neociclo.odetteftp.util.OdetteFtpConstants.*;
-
 import java.io.File;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+
+import static org.neociclo.odetteftp.util.OdetteFtpConstants.DEFAULT_RECORD_SIZE;
 
 /**
  * @author Rafael Marins

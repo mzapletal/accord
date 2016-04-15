@@ -16,16 +16,16 @@
  */
 package org.neociclo.odetteftp.examples.support;
 
+import org.neociclo.odetteftp.protocol.CommandExchangeBuffer;
+import org.neociclo.odetteftp.protocol.EndSessionReason;
+import org.neociclo.odetteftp.support.PasswordAuthenticationHandler;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Properties;
-
-import org.neociclo.odetteftp.protocol.CommandExchangeBuffer;
-import org.neociclo.odetteftp.protocol.EndSessionReason;
-import org.neociclo.odetteftp.support.PasswordAuthenticationHandler;
 
 /**
  * @author Rafael Marins

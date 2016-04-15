@@ -16,11 +16,11 @@
  */
 package org.neociclo.odetteftp.protocol.data;
 
-import java.nio.channels.FileChannel;
-
 import org.neociclo.odetteftp.OdetteFtpException;
 import org.neociclo.odetteftp.protocol.DataExchangeBuffer;
 import org.neociclo.odetteftp.protocol.VirtualFile;
+
+import java.nio.channels.FileChannel;
 
 /**
  * @author Rafael Marins

@@ -1,9 +1,9 @@
 package org.neociclo.accord.components.oftpcmd;
 
+import org.neociclo.odetteftp.TransferMode;
+
 import java.io.File;
 import java.util.Date;
-
-import org.neociclo.odetteftp.TransferMode;
 
 public interface OftpParameters {
 

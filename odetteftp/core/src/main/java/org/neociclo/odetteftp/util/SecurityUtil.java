@@ -16,6 +16,8 @@
  */
 package org.neociclo.odetteftp.util;
 
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -40,8 +42,6 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 /**
  * @author Rafael Marins

@@ -16,16 +16,16 @@
  */
 package org.neociclo.odetteftp.support;
 
+import org.neociclo.odetteftp.OdetteFtpVersion;
+import org.neociclo.odetteftp.TransferMode;
+import org.neociclo.odetteftp.protocol.v20.CipherSuite;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.Reader;
 import java.io.Writer;
 import java.util.Properties;
-
-import org.neociclo.odetteftp.OdetteFtpVersion;
-import org.neociclo.odetteftp.TransferMode;
-import org.neociclo.odetteftp.protocol.v20.CipherSuite;
 
 /**
  * @author Rafael Marins

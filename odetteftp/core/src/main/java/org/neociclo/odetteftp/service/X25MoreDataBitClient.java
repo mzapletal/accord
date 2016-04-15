@@ -16,9 +16,9 @@
  */
 package org.neociclo.odetteftp.service;
 
-import javax.net.ssl.SSLContext;
-
 import org.neociclo.odetteftp.TransportType;
+
+import javax.net.ssl.SSLContext;
 
 /**
  * @author Rafael Marins

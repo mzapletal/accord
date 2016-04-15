@@ -18,9 +18,9 @@
  */
 package org.neociclo.odetteftp.oftplet;
 
-import java.io.Serializable;
-
 import org.neociclo.odetteftp.protocol.AnswerReason;
+
+import java.io.Serializable;
 
 public interface EndFileResponse extends Serializable {
 

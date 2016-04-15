@@ -16,33 +16,6 @@
  */
 package org.neociclo.odetteftp.util;
 
-import static org.neociclo.odetteftp.protocol.CommandExchangeBuffer.DEFAULT_PROTOCOL_CHARSET;
-import static org.neociclo.odetteftp.protocol.CommandExchangeBuffer.formatAttribute;
-import static org.neociclo.odetteftp.protocol.v20.CommandBuilderVer20.formatDate;
-import static org.neociclo.odetteftp.protocol.v20.CommandBuilderVer20.formatTime;
-import static org.neociclo.odetteftp.protocol.v20.ReleaseFormatVer20.EERP_V20;
-import static org.neociclo.odetteftp.util.SecurityUtil.*;
-import static org.neociclo.odetteftp.util.ProtocolUtil.padd;
-
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.security.NoSuchProviderException;
-import java.security.PrivateKey;
-import java.security.cert.CertificateEncodingException;
-import java.security.cert.X509Certificate;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.cert.jcajce.JcaCertStore;
@@ -90,6 +63,34 @@ import org.neociclo.odetteftp.protocol.v20.DefaultSignedDeliveryNotification;
 import org.neociclo.odetteftp.protocol.v20.SignedDeliveryNotification;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
+import java.security.PrivateKey;
+import java.security.cert.CertificateEncodingException;
+import java.security.cert.X509Certificate;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.neociclo.odetteftp.protocol.CommandExchangeBuffer.DEFAULT_PROTOCOL_CHARSET;
+import static org.neociclo.odetteftp.protocol.CommandExchangeBuffer.formatAttribute;
+import static org.neociclo.odetteftp.protocol.v20.CommandBuilderVer20.formatDate;
+import static org.neociclo.odetteftp.protocol.v20.CommandBuilderVer20.formatTime;
+import static org.neociclo.odetteftp.protocol.v20.ReleaseFormatVer20.EERP_V20;
+import static org.neociclo.odetteftp.util.ProtocolUtil.padd;
+import static org.neociclo.odetteftp.util.SecurityUtil.BC_PROVIDER;
+import static org.neociclo.odetteftp.util.SecurityUtil.installBouncyCastleProviderIfNecessary;
 
 /**
  * @author Rafael Marins

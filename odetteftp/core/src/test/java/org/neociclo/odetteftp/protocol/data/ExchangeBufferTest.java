@@ -16,9 +16,11 @@
  */
 package org.neociclo.odetteftp.protocol.data;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.neociclo.odetteftp.util.OftpTestUtil.getResourceFile;
+import org.junit.Test;
+import org.neociclo.odetteftp.OdetteFtpVersion;
+import org.neociclo.odetteftp.protocol.DataExchangeBuffer;
+import org.neociclo.odetteftp.protocol.DefaultVirtualFile;
+import org.neociclo.odetteftp.protocol.RecordFormat;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -26,11 +28,9 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.Date;
 
-import org.junit.Test;
-import org.neociclo.odetteftp.OdetteFtpVersion;
-import org.neociclo.odetteftp.protocol.DataExchangeBuffer;
-import org.neociclo.odetteftp.protocol.DefaultVirtualFile;
-import org.neociclo.odetteftp.protocol.RecordFormat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.neociclo.odetteftp.util.OftpTestUtil.getResourceFile;
 
 /**
  * @author Gary Barker

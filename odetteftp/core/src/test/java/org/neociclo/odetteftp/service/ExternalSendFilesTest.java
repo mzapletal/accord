@@ -16,12 +16,6 @@
  */
 package org.neociclo.odetteftp.service;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
-import static org.neociclo.odetteftp.util.OftpTestUtil.getResourceFile;
-
-import java.util.Calendar;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.neociclo.odetteftp.OdetteFtpVersion;
@@ -30,6 +24,12 @@ import org.neociclo.odetteftp.protocol.DeliveryNotification;
 import org.neociclo.odetteftp.protocol.OdetteFtpObject;
 import org.neociclo.odetteftp.protocol.VirtualFile;
 import org.neociclo.odetteftp.support.OdetteFtpConfiguration;
+
+import java.util.Calendar;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
+import static org.neociclo.odetteftp.util.OftpTestUtil.getResourceFile;
 
 /**
  * @author Rafael Marins

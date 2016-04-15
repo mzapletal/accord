@@ -16,15 +16,6 @@
  */
 package org.neociclo.odetteftp.examples.client.oftp2;
 
-import java.io.File;
-import java.io.IOException;
-import java.net.InetSocketAddress;
-import java.security.KeyStore;
-import java.security.PrivateKey;
-import java.security.cert.X509Certificate;
-
-import javax.net.ssl.SSLContext;
-
 import org.neociclo.odetteftp.OdetteFtpVersion;
 import org.neociclo.odetteftp.TransferMode;
 import org.neociclo.odetteftp.examples.MainSupport;
@@ -42,6 +33,15 @@ import org.neociclo.odetteftp.support.OdetteFtpConfiguration;
 import org.neociclo.odetteftp.support.PasswordHandler;
 import org.neociclo.odetteftp.util.EnvelopingUtil;
 import org.neociclo.odetteftp.util.SecurityUtil;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.security.KeyStore;
+import java.security.PrivateKey;
+import java.security.cert.X509Certificate;
+
+import javax.net.ssl.SSLContext;
 
 /**
  * @author Rafael Marins

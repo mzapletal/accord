@@ -16,11 +16,6 @@
  */
 package org.neociclo.odetteftp.service;
 
-import java.net.SocketAddress;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-
 import org.jboss.netty.bootstrap.ClientBootstrap;
 import org.jboss.netty.channel.Channel;
 import org.jboss.netty.channel.ChannelFactory;
@@ -32,6 +27,11 @@ import org.jboss.netty.util.Timer;
 import org.neociclo.odetteftp.oftplet.OftpletFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.net.SocketAddress;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author Rafael Marins

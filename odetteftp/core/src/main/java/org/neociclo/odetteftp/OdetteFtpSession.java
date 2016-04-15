@@ -16,18 +16,28 @@
  */
 package org.neociclo.odetteftp;
 
-import static org.neociclo.odetteftp.EntityState.*;
-import static org.neociclo.odetteftp.EntityType.*;
-import static org.neociclo.odetteftp.util.OdetteFtpConstants.*;
+import org.neociclo.odetteftp.oftplet.ChannelCallback;
+import org.neociclo.odetteftp.protocol.CommandIdentifier;
+import org.neociclo.odetteftp.protocol.v20.CipherSuite;
+import org.neociclo.odetteftp.util.AttributeKey;
+import org.neociclo.odetteftp.util.ProtocolUtil;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import org.neociclo.odetteftp.oftplet.ChannelCallback;
-import org.neociclo.odetteftp.protocol.CommandIdentifier;
-import org.neociclo.odetteftp.protocol.v20.CipherSuite;
-import org.neociclo.odetteftp.util.ProtocolUtil;
-import org.neociclo.odetteftp.util.AttributeKey;
+import static org.neociclo.odetteftp.EntityState.LISTENER;
+import static org.neociclo.odetteftp.EntityState.SPEAKER;
+import static org.neociclo.odetteftp.EntityType.INITIATOR;
+import static org.neociclo.odetteftp.EntityType.RESPONDER;
+import static org.neociclo.odetteftp.util.OdetteFtpConstants.DEFAULT_OFTP2_CIPHER_SUITE;
+import static org.neociclo.odetteftp.util.OdetteFtpConstants.DEFAULT_OFTP_BUFFER_COMPRESSION;
+import static org.neociclo.odetteftp.util.OdetteFtpConstants.DEFAULT_OFTP_DATA_EXCHANGE_BUFFER;
+import static org.neociclo.odetteftp.util.OdetteFtpConstants.DEFAULT_OFTP_RESTART;
+import static org.neociclo.odetteftp.util.OdetteFtpConstants.DEFAULT_OFTP_SESSION_TIMEOUT;
+import static org.neociclo.odetteftp.util.OdetteFtpConstants.DEFAULT_OFTP_SPECIAL_LOGIC;
+import static org.neociclo.odetteftp.util.OdetteFtpConstants.DEFAULT_OFTP_V20_SECURE_AUTH;
+import static org.neociclo.odetteftp.util.OdetteFtpConstants.DEFAULT_OFTP_VERSION;
+import static org.neociclo.odetteftp.util.OdetteFtpConstants.DEFAULT_OFTP_WINDOW_SIZE;
 
 /**
  * @author Rafael Marins

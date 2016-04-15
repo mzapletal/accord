@@ -16,10 +16,10 @@
  */
 package org.neociclo.odetteftp.camel;
 
-import java.io.Serializable;
-
 import org.neociclo.odetteftp.protocol.OdetteFtpObject;
 import org.neociclo.odetteftp.protocol.VirtualFile;
+
+import java.io.Serializable;
 
 /**
  * @author Rafael Marins

@@ -17,7 +17,6 @@
 package org.neociclo.odetteftp.protocol;
 
 import org.neociclo.odetteftp.OdetteFtpException;
-import org.neociclo.odetteftp.protocol.EndSessionReason;
 
 /**
  * @author Rafael Marins

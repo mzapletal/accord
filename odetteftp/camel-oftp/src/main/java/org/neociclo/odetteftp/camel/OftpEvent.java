@@ -16,10 +16,10 @@
  */
 package org.neociclo.odetteftp.camel;
 
-import java.util.EventObject;
-
 import org.neociclo.odetteftp.OdetteFtpSession;
 import org.neociclo.odetteftp.protocol.OdetteFtpObject;
+
+import java.util.EventObject;
 
 /**
  * @author Rafael Marins

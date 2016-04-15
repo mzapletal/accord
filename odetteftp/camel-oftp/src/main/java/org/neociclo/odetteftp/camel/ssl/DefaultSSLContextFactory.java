@@ -15,6 +15,8 @@
  * limitations under the License.
  */package org.neociclo.odetteftp.camel.ssl;
 
+import org.apache.camel.converter.IOConverter;
+
 import java.io.File;
 import java.security.KeyStore;
 
@@ -22,8 +24,6 @@ import javax.net.ssl.KeyManager;
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManagerFactory;
-
-import org.apache.camel.converter.IOConverter;
 
 /**
  * 

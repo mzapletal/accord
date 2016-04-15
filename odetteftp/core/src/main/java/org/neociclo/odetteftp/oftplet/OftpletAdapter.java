@@ -16,12 +16,15 @@
  */
 package org.neociclo.odetteftp.oftplet;
 
-import static org.neociclo.odetteftp.OdetteFtpVersion.*;
-
 import org.neociclo.odetteftp.OdetteFtpException;
 import org.neociclo.odetteftp.OdetteFtpSession;
 import org.neociclo.odetteftp.OdetteFtpVersion;
 import org.neociclo.odetteftp.security.SecurityContext;
+
+import static org.neociclo.odetteftp.OdetteFtpVersion.OFTP_V12;
+import static org.neociclo.odetteftp.OdetteFtpVersion.OFTP_V13;
+import static org.neociclo.odetteftp.OdetteFtpVersion.OFTP_V14;
+import static org.neociclo.odetteftp.OdetteFtpVersion.OFTP_V20;
 
 
 /**

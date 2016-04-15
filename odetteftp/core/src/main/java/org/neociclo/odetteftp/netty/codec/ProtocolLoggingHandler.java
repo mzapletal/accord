@@ -16,21 +16,21 @@
  */
 package org.neociclo.odetteftp.netty.codec;
 
-import static org.neociclo.odetteftp.util.OftpUtil.toHexString;
-import static org.neociclo.odetteftp.util.BufferUtil.toHexString;
-
 import org.jboss.netty.channel.ChannelFuture;
 import org.jboss.netty.channel.ChannelFutureListener;
+import org.jboss.netty.channel.ChannelHandler.Sharable;
 import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.channel.MessageEvent;
 import org.jboss.netty.channel.SimpleChannelHandler;
-import org.jboss.netty.channel.ChannelHandler.Sharable;
 import org.neociclo.odetteftp.protocol.CommandExchangeBuffer;
 import org.neociclo.odetteftp.protocol.CommandIdentifier;
 import org.neociclo.odetteftp.protocol.OdetteFtpExchangeBuffer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Marker;
+
+import static org.neociclo.odetteftp.util.BufferUtil.toHexString;
+import static org.neociclo.odetteftp.util.OftpUtil.toHexString;
 
 /**
  * @author Rafael Marins

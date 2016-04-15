@@ -16,11 +16,11 @@
  */
 package org.neociclo.odetteftp.camel;
 
-import javax.security.auth.callback.CallbackHandler;
-
 import org.neociclo.odetteftp.oftplet.Oftplet;
 import org.neociclo.odetteftp.oftplet.OftpletFactory;
 import org.neociclo.odetteftp.support.OdetteFtpConfiguration;
+
+import javax.security.auth.callback.CallbackHandler;
 
 /**
  * @author Rafael Marins

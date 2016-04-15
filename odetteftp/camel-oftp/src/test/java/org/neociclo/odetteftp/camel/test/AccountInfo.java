@@ -16,9 +16,9 @@
  */
 package org.neociclo.odetteftp.camel.test;
 
-import java.io.Serializable;
-
 import org.neociclo.odetteftp.support.OdetteFtpConfiguration;
+
+import java.io.Serializable;
 
 /**
  * @author Rafael Marins

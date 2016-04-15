@@ -16,17 +16,18 @@
  */
 package org.neociclo.odetteftp.netty.codec;
 
-import static org.neociclo.odetteftp.protocol.CommandExchangeBuffer.*;
-
-import java.util.HashMap;
-import java.util.Map;
-
 import org.jboss.netty.buffer.ChannelBuffer;
 import org.jboss.netty.buffer.ChannelBufferFactory;
 import org.neociclo.odetteftp.protocol.CommandExchangeBuffer;
 import org.neociclo.odetteftp.protocol.CommandFormat;
 import org.neociclo.odetteftp.protocol.CommandFormat.Field;
 import org.neociclo.odetteftp.util.ProtocolUtil;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.neociclo.odetteftp.protocol.CommandExchangeBuffer.DEFAULT_PROTOCOL_CHARSET;
+import static org.neociclo.odetteftp.protocol.CommandExchangeBuffer.UTF8_ENCODED_PROTOCOL_CHARSET;
 
 /**
  * @author Rafael Marins

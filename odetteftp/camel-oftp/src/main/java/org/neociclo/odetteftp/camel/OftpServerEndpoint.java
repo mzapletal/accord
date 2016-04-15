@@ -16,9 +16,6 @@
  */
 package org.neociclo.odetteftp.camel;
 
-import java.util.Observable;
-import java.util.concurrent.ExecutorService;
-
 import org.apache.camel.Consumer;
 import org.apache.camel.Exchange;
 import org.apache.camel.ExchangePattern;
@@ -32,6 +29,9 @@ import org.neociclo.odetteftp.OdetteFtpSession;
 import org.neociclo.odetteftp.protocol.OdetteFtpObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Observable;
+import java.util.concurrent.ExecutorService;
 
 /**
  * @author Rafael Marins

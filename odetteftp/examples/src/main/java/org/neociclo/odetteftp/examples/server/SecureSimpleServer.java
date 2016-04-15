@@ -16,16 +16,6 @@
  */
 package org.neociclo.odetteftp.examples.server;
 
-import java.io.File;
-import java.net.InetSocketAddress;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.security.KeyStore;
-
-import javax.net.ssl.KeyManagerFactory;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLEngine;
-
 import org.neociclo.odetteftp.OdetteFtpVersion;
 import org.neociclo.odetteftp.TransferMode;
 import org.neociclo.odetteftp.protocol.v20.CipherSuite;
@@ -36,6 +26,15 @@ import org.neociclo.odetteftp.service.TcpServer;
 import org.neociclo.odetteftp.support.OdetteFtpConfiguration;
 import org.neociclo.odetteftp.support.PasswordHandler;
 import org.neociclo.odetteftp.util.SecurityUtil;
+
+import java.io.File;
+import java.net.InetSocketAddress;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.security.KeyStore;
+
+import javax.net.ssl.KeyManagerFactory;
+import javax.net.ssl.SSLContext;
 
 /**
  * @author Rafael Marins

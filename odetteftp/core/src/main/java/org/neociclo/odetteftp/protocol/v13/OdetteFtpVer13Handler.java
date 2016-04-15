@@ -16,6 +16,26 @@
  */
 package org.neociclo.odetteftp.protocol.v13;
 
+import org.neociclo.odetteftp.OdetteFtpException;
+import org.neociclo.odetteftp.OdetteFtpSession;
+import org.neociclo.odetteftp.OdetteFtpVersion;
+import org.neociclo.odetteftp.oftplet.AnswerReasonInfo;
+import org.neociclo.odetteftp.oftplet.EndSessionReasonInfo;
+import org.neociclo.odetteftp.protocol.AnswerReason;
+import org.neociclo.odetteftp.protocol.CommandExchangeBuffer;
+import org.neociclo.odetteftp.protocol.CommandIdentifier;
+import org.neociclo.odetteftp.protocol.DefaultDeliveryNotification;
+import org.neociclo.odetteftp.protocol.DefaultHandler;
+import org.neociclo.odetteftp.protocol.DefaultVirtualFile;
+import org.neociclo.odetteftp.protocol.DeliveryNotification;
+import org.neociclo.odetteftp.protocol.DeliveryNotification.EndResponseType;
+import org.neociclo.odetteftp.protocol.EndSessionReason;
+import org.neociclo.odetteftp.protocol.RecordFormat;
+import org.neociclo.odetteftp.protocol.VirtualFile;
+import org.neociclo.odetteftp.util.ProtocolUtil;
+
+import java.util.Date;
+
 import static org.neociclo.odetteftp.protocol.CommandBuilder.readyToReceive;
 import static org.neociclo.odetteftp.protocol.v13.CommandBuilderVer13.endFile;
 import static org.neociclo.odetteftp.protocol.v13.CommandBuilderVer13.endFileNegativeAnswer;
@@ -44,26 +64,6 @@ import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDREST_FIELD;
 import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDTIME_FIELD;
 import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDUSER_FIELD;
 import static org.neociclo.odetteftp.util.CommandFormatConstants.SFNAREAS_FIELD;
-
-import java.util.Date;
-
-import org.neociclo.odetteftp.OdetteFtpException;
-import org.neociclo.odetteftp.OdetteFtpSession;
-import org.neociclo.odetteftp.OdetteFtpVersion;
-import org.neociclo.odetteftp.oftplet.AnswerReasonInfo;
-import org.neociclo.odetteftp.oftplet.EndSessionReasonInfo;
-import org.neociclo.odetteftp.protocol.AnswerReason;
-import org.neociclo.odetteftp.protocol.CommandExchangeBuffer;
-import org.neociclo.odetteftp.protocol.CommandIdentifier;
-import org.neociclo.odetteftp.protocol.DefaultDeliveryNotification;
-import org.neociclo.odetteftp.protocol.DefaultHandler;
-import org.neociclo.odetteftp.protocol.DefaultVirtualFile;
-import org.neociclo.odetteftp.protocol.DeliveryNotification;
-import org.neociclo.odetteftp.protocol.DeliveryNotification.EndResponseType;
-import org.neociclo.odetteftp.protocol.EndSessionReason;
-import org.neociclo.odetteftp.protocol.RecordFormat;
-import org.neociclo.odetteftp.protocol.VirtualFile;
-import org.neociclo.odetteftp.util.ProtocolUtil;
 
 
 /**

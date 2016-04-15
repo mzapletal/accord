@@ -16,6 +16,9 @@
  */
 package org.neociclo.odetteftp.camel.jaas;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 import java.security.Principal;
 import java.util.HashSet;
@@ -30,9 +33,6 @@ import javax.security.auth.callback.PasswordCallback;
 import javax.security.auth.callback.UnsupportedCallbackException;
 import javax.security.auth.login.LoginException;
 import javax.security.auth.spi.LoginModule;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * @author Rafael Marins

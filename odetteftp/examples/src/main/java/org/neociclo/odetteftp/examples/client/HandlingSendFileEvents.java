@@ -16,14 +16,6 @@
  */
 package org.neociclo.odetteftp.examples.client;
 
-import static org.neociclo.odetteftp.TransferMode.SENDER_ONLY;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.Queue;
-import java.util.Random;
-import java.util.concurrent.ConcurrentLinkedQueue;
-
 import org.neociclo.odetteftp.examples.MainSupport;
 import org.neociclo.odetteftp.oftplet.AnswerReasonInfo;
 import org.neociclo.odetteftp.protocol.AnswerReason;
@@ -39,6 +31,14 @@ import org.neociclo.odetteftp.support.OdetteFtpConfiguration;
 import org.neociclo.odetteftp.support.OftpletEventListenerAdapter;
 import org.neociclo.odetteftp.support.PasswordHandler;
 import org.neociclo.odetteftp.util.IoUtil;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Queue;
+import java.util.Random;
+import java.util.concurrent.ConcurrentLinkedQueue;
+
+import static org.neociclo.odetteftp.TransferMode.SENDER_ONLY;
 
 /**
  * @author Rafael Marins

@@ -1,12 +1,12 @@
 package org.neociclo.accord.components.oftpcmd;
 
-import static org.neociclo.accord.filetransfer.util.SecurityContextHelper.createUserPasswordCallbackContext;
-
 import org.neociclo.accord.core.ContainerFactory;
 import org.neociclo.accord.core.IContainer;
 import org.neociclo.accord.filetransfer.IConnectContext;
 import org.neociclo.accord.filetransfer.IOutgoingFileTransferContainerAdapter;
 import org.neociclo.accord.filetransfer.ITransientConnectionContainerAdapter;
+
+import static org.neociclo.accord.filetransfer.util.SecurityContextHelper.createUserPasswordCallbackContext;
 
 public class OftpProcess {
 

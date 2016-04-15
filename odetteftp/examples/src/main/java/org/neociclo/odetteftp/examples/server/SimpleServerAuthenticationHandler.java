@@ -16,7 +16,11 @@
  */
 package org.neociclo.odetteftp.examples.server;
 
-import static org.neociclo.odetteftp.examples.server.SimpleServerHelper.*;
+import org.neociclo.odetteftp.protocol.CommandExchangeBuffer;
+import org.neociclo.odetteftp.protocol.EndSessionReason;
+import org.neociclo.odetteftp.support.PasswordAuthenticationHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -25,11 +29,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Properties;
 
-import org.neociclo.odetteftp.protocol.CommandExchangeBuffer;
-import org.neociclo.odetteftp.protocol.EndSessionReason;
-import org.neociclo.odetteftp.support.PasswordAuthenticationHandler;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import static org.neociclo.odetteftp.examples.server.SimpleServerHelper.getUserConfigFile;
 
 /**
  * @author Rafael Marins

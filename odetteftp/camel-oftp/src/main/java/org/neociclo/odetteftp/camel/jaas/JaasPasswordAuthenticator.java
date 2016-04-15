@@ -16,6 +16,12 @@
  */
 package org.neociclo.odetteftp.camel.jaas;
 
+import org.apache.camel.util.ObjectHelper;
+import org.neociclo.odetteftp.protocol.EndSessionReason;
+import org.neociclo.odetteftp.support.PasswordAuthenticationHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 
 import javax.security.auth.Subject;
@@ -27,12 +33,6 @@ import javax.security.auth.callback.UnsupportedCallbackException;
 import javax.security.auth.login.AccountNotFoundException;
 import javax.security.auth.login.LoginContext;
 import javax.security.auth.login.LoginException;
-
-import org.apache.camel.util.ObjectHelper;
-import org.neociclo.odetteftp.protocol.EndSessionReason;
-import org.neociclo.odetteftp.support.PasswordAuthenticationHandler;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * @author Rafael Marins

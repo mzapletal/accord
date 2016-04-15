@@ -16,9 +16,9 @@
  */
 package org.neociclo.odetteftp.security;
 
-import javax.security.auth.callback.Callback;
-
 import org.neociclo.odetteftp.OdetteFtpSession;
+
+import javax.security.auth.callback.Callback;
 
 /**
  * @author Rafael Marins

@@ -16,11 +16,18 @@
  */
 package org.neociclo.odetteftp.util;
 
-import static org.neociclo.odetteftp.protocol.v20.SecurityLevel.*;
-import static org.neociclo.odetteftp.protocol.v20.FileEnveloping.*;
-import static org.neociclo.odetteftp.protocol.v20.FileCompression.*;
-import static org.neociclo.odetteftp.protocol.v20.CipherSuite.*;
-import static org.neociclo.odetteftp.util.EnvelopingUtil.*;
+import org.neociclo.odetteftp.protocol.DefaultDeliveryNotification;
+import org.neociclo.odetteftp.protocol.DeliveryNotification;
+import org.neociclo.odetteftp.protocol.DeliveryNotification.EndResponseType;
+import org.neociclo.odetteftp.protocol.NegativeResponseReason;
+import org.neociclo.odetteftp.protocol.VirtualFile;
+import org.neociclo.odetteftp.protocol.v20.CipherSuite;
+import org.neociclo.odetteftp.protocol.v20.DefaultSignedDeliveryNotification;
+import org.neociclo.odetteftp.protocol.v20.EnvelopedVirtualFile;
+import org.neociclo.odetteftp.protocol.v20.FileCompression;
+import org.neociclo.odetteftp.protocol.v20.FileEnveloping;
+import org.neociclo.odetteftp.protocol.v20.SecurityLevel;
+import org.neociclo.odetteftp.protocol.v20.SignedDeliveryNotification;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -36,18 +43,19 @@ import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.Date;
 
-import org.neociclo.odetteftp.protocol.DefaultDeliveryNotification;
-import org.neociclo.odetteftp.protocol.DeliveryNotification;
-import org.neociclo.odetteftp.protocol.NegativeResponseReason;
-import org.neociclo.odetteftp.protocol.VirtualFile;
-import org.neociclo.odetteftp.protocol.DeliveryNotification.EndResponseType;
-import org.neociclo.odetteftp.protocol.v20.CipherSuite;
-import org.neociclo.odetteftp.protocol.v20.DefaultSignedDeliveryNotification;
-import org.neociclo.odetteftp.protocol.v20.EnvelopedVirtualFile;
-import org.neociclo.odetteftp.protocol.v20.FileCompression;
-import org.neociclo.odetteftp.protocol.v20.FileEnveloping;
-import org.neociclo.odetteftp.protocol.v20.SecurityLevel;
-import org.neociclo.odetteftp.protocol.v20.SignedDeliveryNotification;
+import static org.neociclo.odetteftp.protocol.v20.CipherSuite.NO_CIPHER_SUITE_SELECTION;
+import static org.neociclo.odetteftp.protocol.v20.FileCompression.NO_COMPRESSION;
+import static org.neociclo.odetteftp.protocol.v20.FileEnveloping.NO_ENVELOPE;
+import static org.neociclo.odetteftp.protocol.v20.SecurityLevel.ENCRYPTED;
+import static org.neociclo.odetteftp.protocol.v20.SecurityLevel.ENCRYPTED_AND_SIGNED;
+import static org.neociclo.odetteftp.protocol.v20.SecurityLevel.NO_SECURITY_SERVICES;
+import static org.neociclo.odetteftp.protocol.v20.SecurityLevel.SIGNED;
+import static org.neociclo.odetteftp.util.EnvelopingUtil.openCompressedDataParser;
+import static org.neociclo.odetteftp.util.EnvelopingUtil.openCompressedDataStreamGenerator;
+import static org.neociclo.odetteftp.util.EnvelopingUtil.openEnvelopedDataParser;
+import static org.neociclo.odetteftp.util.EnvelopingUtil.openEnvelopedDataStreamGenerator;
+import static org.neociclo.odetteftp.util.EnvelopingUtil.openSignedDataParser;
+import static org.neociclo.odetteftp.util.EnvelopingUtil.openSignedDataStreamGenerator;
 
 /**
  * @author Rafael Marins

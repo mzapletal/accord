@@ -16,13 +16,15 @@
  */
 package org.neociclo.odetteftp.netty.codec;
 
-import static org.neociclo.odetteftp.netty.codec.StbConstants.*;
-
 import org.jboss.netty.buffer.ChannelBuffer;
 import org.jboss.netty.channel.Channel;
-import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.channel.ChannelHandler.Sharable;
+import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.handler.codec.frame.FrameDecoder;
+
+import static org.neociclo.odetteftp.netty.codec.StbConstants.STB_HEADER_SIZE;
+import static org.neociclo.odetteftp.netty.codec.StbConstants.STB_MIN_BUFFER_SIZE;
+import static org.neociclo.odetteftp.netty.codec.StbConstants.STB_V1_NOFLAGS_HEADER;
 
 /**
  * @author Rafael Marins

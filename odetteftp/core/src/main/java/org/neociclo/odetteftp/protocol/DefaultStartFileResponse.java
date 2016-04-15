@@ -16,9 +16,9 @@
  */
 package org.neociclo.odetteftp.protocol;
 
-import java.io.File;
-
 import org.neociclo.odetteftp.oftplet.StartFileResponse;
+
+import java.io.File;
 
 /**
  * @author Rafael Marins

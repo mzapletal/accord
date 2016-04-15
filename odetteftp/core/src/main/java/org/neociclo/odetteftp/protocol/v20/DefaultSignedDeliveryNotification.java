@@ -16,9 +16,9 @@
  */
 package org.neociclo.odetteftp.protocol.v20;
 
-import java.util.Arrays;
-
 import org.neociclo.odetteftp.protocol.DefaultDeliveryNotification;
+
+import java.util.Arrays;
 
 /**
  * @author Rafael Marins

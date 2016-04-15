@@ -16,8 +16,6 @@
  */
 package org.neociclo.odetteftp.service;
 
-import java.util.concurrent.Executor;
-
 import org.jboss.netty.bootstrap.ClientBootstrap;
 import org.jboss.netty.bootstrap.ServerBootstrap;
 import org.jboss.netty.channel.Channel;
@@ -37,6 +35,8 @@ import org.neociclo.odetteftp.netty.codec.OdetteFtpDecoder;
 import org.neociclo.odetteftp.netty.codec.OdetteFtpEncoder;
 import org.neociclo.odetteftp.netty.codec.StbDecoder;
 import org.neociclo.odetteftp.netty.codec.StbEncoder;
+
+import java.util.concurrent.Executor;
 
 /**
  * @author Rafael Marins

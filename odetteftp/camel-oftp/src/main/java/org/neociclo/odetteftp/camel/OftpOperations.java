@@ -16,16 +16,6 @@
  */
 package org.neociclo.odetteftp.camel;
 
-import static org.neociclo.odetteftp.camel.OftpEndpointUtil.askConsumerForIncomingFile;
-import static org.neociclo.odetteftp.camel.OftpEndpointUtil.askConsumerForUserOutgoingExchanges;
-import static org.neociclo.odetteftp.camel.OftpEndpointUtil.notifyConsumerOf;
-
-import java.io.File;
-import java.net.InetSocketAddress;
-import java.util.List;
-
-import javax.net.ssl.SSLContext;
-
 import org.apache.camel.util.ObjectHelper;
 import org.neociclo.odetteftp.OdetteFtpSession;
 import org.neociclo.odetteftp.TransferMode;
@@ -47,6 +37,16 @@ import org.neociclo.odetteftp.service.TcpServer;
 import org.neociclo.odetteftp.support.OdetteFtpConfiguration;
 import org.neociclo.odetteftp.support.PasswordHandler;
 import org.neociclo.odetteftp.util.IoUtil;
+
+import java.io.File;
+import java.net.InetSocketAddress;
+import java.util.List;
+
+import javax.net.ssl.SSLContext;
+
+import static org.neociclo.odetteftp.camel.OftpEndpointUtil.askConsumerForIncomingFile;
+import static org.neociclo.odetteftp.camel.OftpEndpointUtil.askConsumerForUserOutgoingExchanges;
+import static org.neociclo.odetteftp.camel.OftpEndpointUtil.notifyConsumerOf;
 
 /**
  * @author Rafael Marins

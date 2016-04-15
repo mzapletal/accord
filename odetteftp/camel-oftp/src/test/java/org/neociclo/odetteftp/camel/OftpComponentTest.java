@@ -23,8 +23,6 @@ import org.junit.Test;
 import org.neociclo.odetteftp.OdetteFtpVersion;
 import org.neociclo.odetteftp.TransferMode;
 import org.neociclo.odetteftp.TransportType;
-import org.neociclo.odetteftp.camel.OftpSettings;
-import org.neociclo.odetteftp.camel.OftpServerEndpoint;
 import org.neociclo.odetteftp.protocol.v20.CipherSuite;
 
 

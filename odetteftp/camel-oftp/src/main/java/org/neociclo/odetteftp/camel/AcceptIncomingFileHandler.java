@@ -17,22 +17,23 @@
  */
 package org.neociclo.odetteftp.camel;
 
-import static org.neociclo.odetteftp.protocol.DefaultStartFileResponse.*;
-
-import java.io.File;
-import java.io.IOException;
-
 import org.apache.camel.Exchange;
 import org.apache.camel.InvalidPayloadException;
 import org.apache.camel.Message;
 import org.apache.camel.spi.Synchronization;
 import org.apache.commons.io.FileSystemUtils;
-import org.neociclo.odetteftp.protocol.DefaultStartFileResponse;
 import org.neociclo.odetteftp.oftplet.StartFileResponse;
 import org.neociclo.odetteftp.protocol.AnswerReason;
+import org.neociclo.odetteftp.protocol.DefaultStartFileResponse;
 import org.neociclo.odetteftp.protocol.VirtualFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.File;
+import java.io.IOException;
+
+import static org.neociclo.odetteftp.protocol.DefaultStartFileResponse.negativeStartFileAnswer;
+import static org.neociclo.odetteftp.protocol.DefaultStartFileResponse.positiveStartFileAnswer;
 
 public class AcceptIncomingFileHandler implements Synchronization {
 

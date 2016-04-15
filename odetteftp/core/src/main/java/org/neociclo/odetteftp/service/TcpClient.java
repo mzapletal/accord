@@ -16,15 +16,6 @@
  */
 package org.neociclo.odetteftp.service;
 
-import java.net.InetSocketAddress;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
-
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLEngine;
-
 import org.jboss.netty.channel.ChannelFactory;
 import org.jboss.netty.channel.ChannelPipelineFactory;
 import org.jboss.netty.channel.socket.nio.NioClientSocketChannelFactory;
@@ -36,6 +27,15 @@ import org.neociclo.odetteftp.netty.OdetteFtpPipelineFactory;
 import org.neociclo.odetteftp.netty.SslHandlerFactory;
 import org.neociclo.odetteftp.oftplet.OftpletFactory;
 import org.neociclo.odetteftp.util.ExecutorUtil;
+
+import java.net.InetSocketAddress;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLEngine;
 
 /**
  * @author Rafael Marins

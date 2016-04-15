@@ -16,14 +16,14 @@
  */
 package org.neociclo.odetteftp.protocol;
 
-import static org.neociclo.odetteftp.protocol.CommandIdentifier.DATA;
+import org.neociclo.odetteftp.OdetteFtpException;
+import org.neociclo.odetteftp.util.ByteBufferFactory;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.Iterator;
 
-import org.neociclo.odetteftp.OdetteFtpException;
-import org.neociclo.odetteftp.util.ByteBufferFactory;
+import static org.neociclo.odetteftp.protocol.CommandIdentifier.DATA;
 
 /**
  * DataExchange is an type of Odette FTP Exchange Buffer used for encapsulate

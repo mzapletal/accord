@@ -16,9 +16,6 @@
  */
 package org.neociclo.odetteftp.examples.client;
 
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
-
 import org.jboss.netty.util.HashedWheelTimer;
 import org.jboss.netty.util.Timer;
 import org.neociclo.odetteftp.examples.MainSupport;
@@ -29,6 +26,9 @@ import org.neociclo.odetteftp.security.PasswordCallback;
 import org.neociclo.odetteftp.service.TcpClient;
 import org.neociclo.odetteftp.support.PasswordHandler;
 import org.neociclo.odetteftp.util.ExecutorUtil;
+
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 /**
  * @author Rafael Marins

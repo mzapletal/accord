@@ -16,9 +16,9 @@
  */
 package org.neociclo.odetteftp.protocol;
 
-import java.nio.ByteBuffer;
-
 import org.neociclo.odetteftp.OdetteFtpException;
+
+import java.nio.ByteBuffer;
 
 /**
  * The communication between ODETTE-FTP entities is basically done by sending

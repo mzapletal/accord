@@ -16,12 +16,12 @@
  */
 package org.neociclo.odetteftp.camel;
 
-import java.util.Observable;
-import java.util.concurrent.Executor;
-
 import org.apache.camel.Endpoint;
 import org.apache.camel.ExchangePattern;
 import org.jboss.netty.util.Timer;
+
+import java.util.Observable;
+import java.util.concurrent.Executor;
 
 /**
  * @author Rafael Marins

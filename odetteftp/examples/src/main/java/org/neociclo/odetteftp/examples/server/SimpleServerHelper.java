@@ -16,6 +16,12 @@
  */
 package org.neociclo.odetteftp.examples.server;
 
+import org.neociclo.odetteftp.protocol.OdetteFtpObject;
+import org.neociclo.odetteftp.protocol.VirtualFile;
+import org.neociclo.odetteftp.util.ProtocolUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -23,12 +29,6 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-
-import org.neociclo.odetteftp.protocol.OdetteFtpObject;
-import org.neociclo.odetteftp.protocol.VirtualFile;
-import org.neociclo.odetteftp.util.ProtocolUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * @author Rafael Marins

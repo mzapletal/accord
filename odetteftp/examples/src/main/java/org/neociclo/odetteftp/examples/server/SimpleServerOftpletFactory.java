@@ -16,13 +16,13 @@
  */
 package org.neociclo.odetteftp.examples.server;
 
-import java.io.File;
-
 import org.neociclo.odetteftp.oftplet.Oftplet;
 import org.neociclo.odetteftp.oftplet.OftpletFactory;
 import org.neociclo.odetteftp.security.MappedCallbackHandler;
 import org.neociclo.odetteftp.support.OdetteFtpConfiguration;
 import org.neociclo.odetteftp.support.OftpletEventListener;
+
+import java.io.File;
 
 /**
  * @author Rafael Marins

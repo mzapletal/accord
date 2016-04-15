@@ -16,7 +16,9 @@
  */
 package org.neociclo.odetteftp.protocol.v14;
 
-import static org.neociclo.odetteftp.util.CommandFormatConstants.*;
+import org.neociclo.odetteftp.protocol.CommandFormat;
+import org.neociclo.odetteftp.protocol.CommandIdentifier;
+
 import static org.neociclo.odetteftp.protocol.CommandFormat.Field.ALPHANUMERIC_TYPE;
 import static org.neociclo.odetteftp.protocol.CommandFormat.Field.CR_TYPE;
 import static org.neociclo.odetteftp.protocol.CommandFormat.Field.FIXED_FORMAT;
@@ -36,9 +38,70 @@ import static org.neociclo.odetteftp.protocol.CommandIdentifier.SFNA;
 import static org.neociclo.odetteftp.protocol.CommandIdentifier.SFPA;
 import static org.neociclo.odetteftp.protocol.CommandIdentifier.SSID;
 import static org.neociclo.odetteftp.protocol.CommandIdentifier.SSRM;
-
-import org.neociclo.odetteftp.protocol.CommandFormat;
-import org.neociclo.odetteftp.protocol.CommandIdentifier;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.CDCMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.CDTCMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.CDTRSV1_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPCMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPDATE_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPDEST_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPDSN_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPORIG_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPRSV1_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPTIME_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EERPUSER_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EFIDCMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EFIDRCNT_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EFIDUCNT_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EFNACMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EFNAREAS_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EFPACD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.EFPACMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.ESIDCMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.ESIDCR_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.ESIDREAS_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.NERPCMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.NERPCREA_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.NERPDATE_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.NERPDEST_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.NERPDSN_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.NERPORIG_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.NERPREAS_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.NERPRSV1_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.NERPTIME_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.RTRCMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDCMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDDATE_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDDEST_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDDSN_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDFMT_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDFSIZ_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDLRECL_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDORIG_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDREST_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDRSV1_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDTIME_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDUSER_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFNACMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFNAREAS_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFNARRTR_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFPAACNT_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFPACMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDCMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDCMPR_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDCODE_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDCRED_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDCR_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDLEV_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDPSWD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDREST_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDRSV1_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDSDEB_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDSPEC_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDSR_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDUSER_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSRMCMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSRMCR_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSRMMSG_FIELD;
 
 /**
  * @author Rafael Marins

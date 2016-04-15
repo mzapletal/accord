@@ -16,13 +16,13 @@
  */
 package org.neociclo.odetteftp.examples.support;
 
-import static java.util.concurrent.TimeUnit.*;
-
-import java.util.concurrent.atomic.AtomicInteger;
-
 import org.neociclo.odetteftp.OdetteFtpException;
 import org.neociclo.odetteftp.OdetteFtpSession;
 import org.neociclo.odetteftp.support.OftpletEventListenerAdapter;
+
+import java.util.concurrent.atomic.AtomicInteger;
+
+import static java.util.concurrent.TimeUnit.MINUTES;
 
 /**
  * @author Rafael Marins

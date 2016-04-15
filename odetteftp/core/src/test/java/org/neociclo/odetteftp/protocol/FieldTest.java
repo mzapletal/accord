@@ -16,15 +16,23 @@
  */
 package org.neociclo.odetteftp.protocol;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
+import org.neociclo.odetteftp.protocol.CommandFormat.Field;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 import static org.neociclo.odetteftp.protocol.CommandFormat.Field.ENCODED_TYPE;
 import static org.neociclo.odetteftp.protocol.CommandFormat.Field.FIXED_FORMAT;
 import static org.neociclo.odetteftp.protocol.CommandFormat.Field.NUMERIC_TYPE;
 import static org.neociclo.odetteftp.protocol.CommandFormat.Field.VARIABLE_FORMAT;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.*;
-
-import org.junit.Test;
-import org.neociclo.odetteftp.protocol.CommandFormat.Field;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.NERPHSHL_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.NERPHSH_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.NERPREAST_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDDESCL_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDDESC_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SFIDOSIZ_FIELD;
 
 /**
  * @author Rafael Marins

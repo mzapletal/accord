@@ -16,12 +16,6 @@
  */
 package org.neociclo.odetteftp.camel;
 
-import java.io.File;
-import java.net.URI;
-import java.util.Map;
-
-import javax.net.ssl.SSLContext;
-
 import org.apache.camel.RuntimeCamelException;
 import org.apache.camel.util.ObjectHelper;
 import org.neociclo.odetteftp.OdetteFtpVersion;
@@ -32,6 +26,12 @@ import org.neociclo.odetteftp.support.OdetteFtpConfiguration;
 import org.neociclo.odetteftp.util.OdetteFtpConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.File;
+import java.net.URI;
+import java.util.Map;
+
+import javax.net.ssl.SSLContext;
 
 /**
  * @author Rafael Marins

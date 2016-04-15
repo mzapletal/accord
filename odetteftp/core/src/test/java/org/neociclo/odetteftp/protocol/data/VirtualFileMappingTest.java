@@ -16,9 +16,14 @@
  */
 package org.neociclo.odetteftp.protocol.data;
 
-import static org.junit.Assert.assertTrue;
-import static org.neociclo.odetteftp.util.OftpTestUtil.getOutputDir;
-import static org.neociclo.odetteftp.util.OftpTestUtil.getResourceFile;
+import org.junit.Test;
+import org.neociclo.odetteftp.OdetteFtpVersion;
+import org.neociclo.odetteftp.protocol.DataExchangeBuffer;
+import org.neociclo.odetteftp.protocol.DefaultVirtualFile;
+import org.neociclo.odetteftp.protocol.RecordFormat;
+import org.neociclo.odetteftp.util.SecurityUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -28,14 +33,9 @@ import java.nio.channels.FileChannel;
 import java.util.Arrays;
 import java.util.Date;
 
-import org.junit.Test;
-import org.neociclo.odetteftp.OdetteFtpVersion;
-import org.neociclo.odetteftp.protocol.DataExchangeBuffer;
-import org.neociclo.odetteftp.protocol.DefaultVirtualFile;
-import org.neociclo.odetteftp.protocol.RecordFormat;
-import org.neociclo.odetteftp.util.SecurityUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import static org.junit.Assert.assertTrue;
+import static org.neociclo.odetteftp.util.OftpTestUtil.getOutputDir;
+import static org.neociclo.odetteftp.util.OftpTestUtil.getResourceFile;
 
 /**
  * @author Rafael Marins

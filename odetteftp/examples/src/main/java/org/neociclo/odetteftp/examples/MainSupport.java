@@ -16,9 +16,6 @@
  */
 package org.neociclo.odetteftp.examples;
 
-import static java.lang.System.out;
-import static java.lang.System.err;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -27,6 +24,9 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
+
+import static java.lang.System.err;
+import static java.lang.System.out;
 
 public class MainSupport {
 

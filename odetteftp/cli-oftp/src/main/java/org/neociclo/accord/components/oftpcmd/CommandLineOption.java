@@ -1,11 +1,11 @@
 package org.neociclo.accord.components.oftpcmd;
 
+import org.apache.commons.cli.Option;
+
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-
-import org.apache.commons.cli.Option;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)

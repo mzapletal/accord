@@ -16,9 +16,9 @@
  */
 package org.neociclo.odetteftp.protocol;
 
-import java.util.Date;
-
 import org.neociclo.odetteftp.util.ProtocolUtil;
+
+import java.util.Date;
 
 /**
  * @author Rafael Marins

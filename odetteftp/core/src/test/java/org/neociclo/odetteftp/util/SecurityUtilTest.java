@@ -16,18 +16,22 @@
  */
 package org.neociclo.odetteftp.util;
 
-import static org.junit.Assert.*;
-import static org.neociclo.odetteftp.util.OftpTestUtil.getResourceFile;
-import static org.neociclo.odetteftp.util.SecurityUtil.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.io.File;
 import java.io.FilenameFilter;
 import java.security.KeyStore;
 import java.security.PrivateKey;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.neociclo.odetteftp.util.OftpTestUtil.getResourceFile;
+import static org.neociclo.odetteftp.util.SecurityUtil.DEFAULT_OFTP_HASH_ALGORITHM;
+import static org.neociclo.odetteftp.util.SecurityUtil.computeFileHash;
+import static org.neociclo.odetteftp.util.SecurityUtil.getPrivateKey;
+import static org.neociclo.odetteftp.util.SecurityUtil.openKeyStore;
 
 /**
  * @author Rafael Marins

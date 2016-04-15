@@ -17,14 +17,13 @@
  */
 package org.neociclo.odetteftp.camel;
 
-import java.util.Calendar;
-import java.util.Date;
-
 import junit.framework.Assert;
 
 import org.junit.Test;
-import org.neociclo.odetteftp.camel.FileRenameBean;
 import org.neociclo.odetteftp.protocol.DefaultVirtualFile;
+
+import java.util.Calendar;
+import java.util.Date;
 
 public class TestFileRenameBean {
 //

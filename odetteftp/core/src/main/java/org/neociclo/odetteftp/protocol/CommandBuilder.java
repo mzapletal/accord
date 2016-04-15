@@ -16,8 +16,6 @@
  */
 package org.neociclo.odetteftp.protocol;
 
-import static org.neociclo.odetteftp.util.CommandFormatConstants.*;
-
 import static org.neociclo.odetteftp.protocol.CommandIdentifier.CD;
 import static org.neociclo.odetteftp.protocol.CommandIdentifier.CDT;
 import static org.neociclo.odetteftp.protocol.CommandIdentifier.RTR;
@@ -26,6 +24,14 @@ import static org.neociclo.odetteftp.protocol.v13.ReleaseFormatVer13.CDT_V13;
 import static org.neociclo.odetteftp.protocol.v13.ReleaseFormatVer13.CD_V13;
 import static org.neociclo.odetteftp.protocol.v13.ReleaseFormatVer13.RTR_V13;
 import static org.neociclo.odetteftp.protocol.v13.ReleaseFormatVer13.SSRM_V13;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.CDCMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.CDTCMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.PROTOCOL_CARRIAGE_RETURN;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.RTRCMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSRMCMD_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSRMCR_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSRMMSG_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.SSRMMSG_VALUE;
 
 /**
  * @author Rafael Marins

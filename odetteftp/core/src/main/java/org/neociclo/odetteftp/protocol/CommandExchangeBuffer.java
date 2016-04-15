@@ -16,6 +16,12 @@
  */
 package org.neociclo.odetteftp.protocol;
 
+import org.neociclo.odetteftp.protocol.CommandFormat.Field;
+import org.neociclo.odetteftp.util.ByteBufferFactory;
+import org.neociclo.odetteftp.util.ProtocolUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.charset.Charset;
@@ -23,12 +29,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import org.neociclo.odetteftp.protocol.CommandFormat.Field;
-import org.neociclo.odetteftp.util.ByteBufferFactory;
-import org.neociclo.odetteftp.util.ProtocolUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * A Command Exchange Buffer contains a single command starting at the beginning

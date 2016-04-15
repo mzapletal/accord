@@ -16,9 +16,6 @@
  */
 package org.neociclo.odetteftp.camel;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.camel.Exchange;
 import org.apache.camel.ExchangePattern;
 import org.apache.camel.InvalidPayloadException;
@@ -29,6 +26,9 @@ import org.apache.camel.util.ObjectHelper;
 import org.neociclo.odetteftp.OdetteFtpSession;
 import org.neociclo.odetteftp.protocol.OdetteFtpObject;
 import org.neociclo.odetteftp.protocol.VirtualFile;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Rafael Marins

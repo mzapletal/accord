@@ -16,15 +16,15 @@
  */
 package org.neociclo.odetteftp.protocol;
 
-import static org.junit.Assert.assertEquals;
-
-import java.util.Calendar;
-import java.util.Date;
-
 import org.junit.Test;
 import org.neociclo.odetteftp.protocol.v13.OdetteFtpVer13Handler;
 import org.neociclo.odetteftp.protocol.v14.OdetteFtpVer14Handler;
 import org.neociclo.odetteftp.protocol.v20.OdetteFtpVer20Handler;
+
+import java.util.Calendar;
+import java.util.Date;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author Rafael Marins

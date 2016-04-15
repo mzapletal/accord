@@ -16,10 +16,10 @@
  */
 package org.neociclo.odetteftp.security;
 
+import org.neociclo.odetteftp.OdetteFtpSession;
+
 import javax.security.auth.callback.Callback;
 import javax.security.auth.callback.CallbackHandler;
-
-import org.neociclo.odetteftp.OdetteFtpSession;
 
 /**
  * Convey the received Authentication Challenge request/response with the

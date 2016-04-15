@@ -16,26 +16,26 @@
  */
 package org.neociclo.odetteftp.service;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-import static org.neociclo.odetteftp.util.OdetteFtpSupport.getReplyDeliveryNotification;
-import static org.neociclo.odetteftp.util.OftpTestUtil.getOutputDir;
-
-import java.io.File;
-import java.io.IOException;
-
 import org.junit.Test;
 import org.neociclo.odetteftp.TransferMode;
-import org.neociclo.odetteftp.protocol.DefaultEndFileResponse;
-import org.neociclo.odetteftp.protocol.DefaultStartFileResponse;
 import org.neociclo.odetteftp.oftplet.EndFileResponse;
 import org.neociclo.odetteftp.oftplet.StartFileResponse;
+import org.neociclo.odetteftp.protocol.DefaultEndFileResponse;
+import org.neociclo.odetteftp.protocol.DefaultStartFileResponse;
 import org.neociclo.odetteftp.protocol.DeliveryNotification;
 import org.neociclo.odetteftp.protocol.VirtualFile;
 import org.neociclo.odetteftp.support.OdetteFtpConfiguration;
 import org.neociclo.odetteftp.support.OftpletEventListenerAdapter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.File;
+import java.io.IOException;
+
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.neociclo.odetteftp.util.OdetteFtpSupport.getReplyDeliveryNotification;
+import static org.neociclo.odetteftp.util.OftpTestUtil.getOutputDir;
 
 /**
  * @author Rafael Marins

@@ -16,12 +16,6 @@
  */
 package org.neociclo.odetteftp.netty.codec;
 
-import static org.junit.Assert.*;
-import static org.neociclo.odetteftp.util.CommandFormatConstants.*;
-import static org.neociclo.odetteftp.protocol.CommandExchangeBuffer.*;
-
-import java.io.UnsupportedEncodingException;
-
 import org.jboss.netty.buffer.ChannelBuffer;
 import org.jboss.netty.buffer.ChannelBuffers;
 import org.jboss.netty.handler.codec.embedder.DecoderEmbedder;
@@ -30,11 +24,17 @@ import org.junit.Test;
 import org.neociclo.odetteftp.EntityType;
 import org.neociclo.odetteftp.OdetteFtpSession;
 import org.neociclo.odetteftp.OdetteFtpVersion;
-import org.neociclo.odetteftp.netty.codec.OdetteFtpDecoder;
 import org.neociclo.odetteftp.protocol.CommandBuilder;
 import org.neociclo.odetteftp.protocol.CommandExchangeBuffer;
 import org.neociclo.odetteftp.protocol.CommandIdentifier;
 import org.neociclo.odetteftp.protocol.EndSessionReason;
+
+import java.io.UnsupportedEncodingException;
+
+import static org.junit.Assert.assertEquals;
+import static org.neociclo.odetteftp.protocol.CommandExchangeBuffer.DEFAULT_PROTOCOL_CHARSET;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.CDTRSV1_FIELD;
+import static org.neociclo.odetteftp.util.CommandFormatConstants.ESIDREAS_FIELD;
 
 /**
  * @author Rafael Marins

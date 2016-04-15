@@ -16,11 +16,6 @@
  */
 package org.neociclo.odetteftp.camel;
 
-import static org.neociclo.odetteftp.camel.OftpMessage.*;
-
-import java.util.HashMap;
-import java.util.Map;
-
 import org.apache.camel.Endpoint;
 import org.apache.camel.Exchange;
 import org.neociclo.odetteftp.EntityType;
@@ -32,6 +27,47 @@ import org.neociclo.odetteftp.protocol.v20.EnvelopedVirtualFile;
 import org.neociclo.odetteftp.protocol.v20.SignedDeliveryNotification;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_DATASET_NAME;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_DESTINATION;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_MESSAGE_COMMAND_NAME;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_MESSAGE_EVENT_NAME;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_NOTIF_CREATOR;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_NOTIF_FILE_HASH;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_NOTIF_REASON;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_NOTIF_REASON_TEXT;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_NOTIF_SIGNATURE;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_NOTIF_TYPE;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_ORIGINATOR;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_REPLY_TO;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_SESSION_CIPHER_SUITE_SELECTION;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_SESSION_COMPRESSION;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_SESSION_DEB_SIZE;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_SESSION_LOCAL_USER;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_SESSION_REMOTE_USER;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_SESSION_RESTART;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_SESSION_SECURE_AUTHENTICATION;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_SESSION_SPECIAL_LOGIC;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_SESSION_USER_DATA;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_SESSION_VERSION;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_SESSION_WINDOW_SIZE;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_TIMESTAMP;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_TIMESTAMP_TICKER;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_USER_DATA;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_VF_CIPHER_SUITE;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_VF_COMPRESSION_ALGORITHM;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_VF_DESCRIPTION;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_VF_ENVELOPING_FORMAT;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_VF_ORIGINAL_SIZE;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_VF_RECORD_FORMAT;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_VF_RECORD_SIZE;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_VF_RESTART_OFFSET;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_VF_SECURITY_LEVEL;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_VF_SIGNED_NOTIFICATION_REQUEST;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_VF_SIZE;
 
 /**
  * @author Rafael Marins

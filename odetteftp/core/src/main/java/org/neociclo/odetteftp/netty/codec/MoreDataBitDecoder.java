@@ -16,10 +16,10 @@
  */
 package org.neociclo.odetteftp.netty.codec;
 
-import static org.neociclo.odetteftp.netty.codec.MoreDataBitConstants.*;
-
 import org.jboss.netty.channel.ChannelHandler.Sharable;
 import org.jboss.netty.handler.codec.frame.LengthFieldBasedFrameDecoder;
+
+import static org.neociclo.odetteftp.netty.codec.MoreDataBitConstants.MORE_DATA_BIT_LENGTH_FIELD_SIZE;
 
 /**
  * @author Rafael Marins

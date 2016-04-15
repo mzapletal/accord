@@ -16,16 +16,16 @@
  */
 package org.neociclo.odetteftp.util;
 
-import static org.neociclo.odetteftp.EntityType.RESPONDER;
-import static org.neociclo.odetteftp.EntityType.INITIATOR;
-
-import java.nio.channels.FileChannel;
-
 import org.neociclo.odetteftp.OdetteFtpSession;
 import org.neociclo.odetteftp.TransferMode;
 import org.neociclo.odetteftp.oftplet.Oftplet;
 import org.neociclo.odetteftp.protocol.DataExchangeBuffer;
 import org.neociclo.odetteftp.protocol.OdetteFtpObject;
+
+import java.nio.channels.FileChannel;
+
+import static org.neociclo.odetteftp.EntityType.INITIATOR;
+import static org.neociclo.odetteftp.EntityType.RESPONDER;
 
 /**
  * @author Rafael Marins

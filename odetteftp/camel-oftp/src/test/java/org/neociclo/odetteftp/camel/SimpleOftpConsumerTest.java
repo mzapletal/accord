@@ -16,8 +16,6 @@
  */
 package org.neociclo.odetteftp.camel;
 
-import java.io.File;
-
 import org.apache.camel.EndpointInject;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.mock.MockEndpoint;
@@ -26,6 +24,8 @@ import org.neociclo.odetteftp.camel.test.AccountInfo;
 import org.neociclo.odetteftp.camel.test.BaseServerTestSupport;
 import org.neociclo.odetteftp.protocol.DefaultVirtualFile;
 import org.neociclo.odetteftp.protocol.VirtualFile;
+
+import java.io.File;
 
 /**
  * @author Rafael Marins

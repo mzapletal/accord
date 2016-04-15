@@ -1,13 +1,13 @@
 package org.neociclo.accord.components.oftpcmd;
 
-import java.io.PrintWriter;
-import java.util.Arrays;
-
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
+
+import java.io.PrintWriter;
+import java.util.Arrays;
 
 /**
  * 

@@ -16,18 +16,6 @@
  */
 package org.neociclo.odetteftp.examples.server;
 
-import static org.neociclo.odetteftp.examples.server.SimpleServerHelper.*;
-import static org.neociclo.odetteftp.protocol.DefaultEndFileResponse.*;
-import static org.neociclo.odetteftp.protocol.DefaultStartFileResponse.*;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-
 import org.neociclo.odetteftp.OdetteFtpException;
 import org.neociclo.odetteftp.OdetteFtpSession;
 import org.neociclo.odetteftp.OdetteFtpVersion;
@@ -48,6 +36,22 @@ import org.neociclo.odetteftp.support.OdetteFtpConfiguration;
 import org.neociclo.odetteftp.support.OftpletEventListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import static org.neociclo.odetteftp.examples.server.SimpleServerHelper.createFileName;
+import static org.neociclo.odetteftp.examples.server.SimpleServerHelper.getUserDir;
+import static org.neociclo.odetteftp.examples.server.SimpleServerHelper.getUserMailboxDir;
+import static org.neociclo.odetteftp.examples.server.SimpleServerHelper.loadObject;
+import static org.neociclo.odetteftp.protocol.DefaultEndFileResponse.positiveEndFileAnswer;
+import static org.neociclo.odetteftp.protocol.DefaultStartFileResponse.negativeStartFileAnswer;
+import static org.neociclo.odetteftp.protocol.DefaultStartFileResponse.positiveStartFileAnswer;
 
 /**
  * @author Rafael Marins

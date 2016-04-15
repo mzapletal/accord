@@ -16,10 +16,10 @@
  */
 package org.neociclo.odetteftp.camel.test;
 
-import java.io.IOException;
-
 import org.neociclo.odetteftp.protocol.EndSessionReason;
 import org.neociclo.odetteftp.support.PasswordAuthenticationHandler;
+
+import java.io.IOException;
 
 /**
  * @author Rafael Marins

@@ -16,12 +16,6 @@
  */
 package org.neociclo.odetteftp.camel;
 
-import static org.neociclo.odetteftp.camel.OftpCommand.*;
-import static org.neociclo.odetteftp.camel.OftpMessage.*;
-
-import java.io.File;
-import java.util.List;
-
 import org.apache.camel.EndpointInject;
 import org.apache.camel.Exchange;
 import org.apache.camel.ExchangePattern;
@@ -31,10 +25,14 @@ import org.apache.camel.ProducerTemplate;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.mock.MockEndpoint;
 import org.junit.Test;
-import org.neociclo.odetteftp.camel.OftpCommand;
-import org.neociclo.odetteftp.camel.OftpMessage;
 import org.neociclo.odetteftp.camel.test.BaseClientTestSupport;
 import org.neociclo.odetteftp.protocol.OdetteFtpObject;
+
+import java.io.File;
+import java.util.List;
+
+import static org.neociclo.odetteftp.camel.OftpCommand.OFTP_CMD_RETRIEVE_USER_OUTGOING_EXCHANGES;
+import static org.neociclo.odetteftp.camel.OftpMessage.OFTP_MESSAGE_COMMAND_NAME;
 
 /**
  * @author Rafael Marins

@@ -16,12 +16,6 @@
  */
 package org.neociclo.odetteftp.camel;
 
-import java.util.Observable;
-import java.util.Queue;
-import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.atomic.AtomicBoolean;
-
 import org.apache.camel.Component;
 import org.apache.camel.Consumer;
 import org.apache.camel.MultipleConsumersSupport;
@@ -34,6 +28,12 @@ import org.jboss.netty.util.Timer;
 import org.neociclo.odetteftp.service.Client;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Observable;
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * @author Rafael Marins

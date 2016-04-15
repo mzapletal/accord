@@ -16,16 +16,17 @@
  */
 package org.neociclo.odetteftp.netty.codec;
 
-import static org.jboss.netty.channel.Channels.*;
-
-import java.util.concurrent.atomic.AtomicInteger;
-
 import org.jboss.netty.buffer.ChannelBuffer;
 import org.jboss.netty.channel.Channel;
 import org.jboss.netty.channel.ChannelDownstreamHandler;
 import org.jboss.netty.channel.ChannelEvent;
 import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.channel.MessageEvent;
+
+import java.util.concurrent.atomic.AtomicInteger;
+
+import static org.jboss.netty.channel.Channels.future;
+import static org.jboss.netty.channel.Channels.write;
 
 /**
  * @author Rafael Marins

@@ -16,7 +16,33 @@
  */
 package org.neociclo.odetteftp.protocol.v20;
 
-import static org.neociclo.odetteftp.util.OdetteFtpConstants.DEFAULT_RECORD_SIZE;
+import org.neociclo.odetteftp.OdetteFtpException;
+import org.neociclo.odetteftp.OdetteFtpSession;
+import org.neociclo.odetteftp.OdetteFtpVersion;
+import org.neociclo.odetteftp.oftplet.AnswerReasonInfo;
+import org.neociclo.odetteftp.oftplet.EndSessionReasonInfo;
+import org.neociclo.odetteftp.protocol.AnswerReason;
+import org.neociclo.odetteftp.protocol.CommandExchangeBuffer;
+import org.neociclo.odetteftp.protocol.CommandIdentifier;
+import org.neociclo.odetteftp.protocol.DeliveryNotification;
+import org.neociclo.odetteftp.protocol.DeliveryNotification.EndResponseType;
+import org.neociclo.odetteftp.protocol.EndSessionReason;
+import org.neociclo.odetteftp.protocol.NegativeResponseReason;
+import org.neociclo.odetteftp.protocol.RecordFormat;
+import org.neociclo.odetteftp.protocol.VirtualFile;
+import org.neociclo.odetteftp.protocol.v14.OdetteFtpVer14Handler;
+import org.neociclo.odetteftp.security.AuthenticationChallengeCallback;
+import org.neociclo.odetteftp.security.EncryptAuthenticationChallengeCallback;
+import org.neociclo.odetteftp.util.BufferUtil;
+import org.neociclo.odetteftp.util.OftpUtil;
+import org.neociclo.odetteftp.util.ProtocolUtil;
+import org.neociclo.odetteftp.util.TimestampTicker;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.Arrays;
+import java.util.Date;
+
 import static org.neociclo.odetteftp.protocol.CommandBuilder.readyToReceive;
 import static org.neociclo.odetteftp.protocol.EndSessionReason.INCOMPATIBLE_SECURE_AUTHENTICATION;
 import static org.neociclo.odetteftp.protocol.EndSessionReason.INVALID_CHALLENGE_RESPONSE;
@@ -84,37 +110,11 @@ import static org.neociclo.odetteftp.util.CommandFormatConstants.SFNAREAST_FIELD
 import static org.neociclo.odetteftp.util.CommandFormatConstants.SFNAREAS_FIELD;
 import static org.neociclo.odetteftp.util.CommandFormatConstants.SSIDAUTH_FIELD;
 import static org.neociclo.odetteftp.util.OdetteFtpConstants.AUTHENTICATION_CHALLENGE_SIZE;
+import static org.neociclo.odetteftp.util.OdetteFtpConstants.DEFAULT_RECORD_SIZE;
 import static org.neociclo.odetteftp.util.ProtocolUtil.valueOfYesNo;
 import static org.neociclo.odetteftp.util.SessionHelper.isInitiator;
 import static org.neociclo.odetteftp.util.SessionHelper.isSessionSecureAuthenticated;
 import static org.neociclo.odetteftp.util.SessionHelper.setSessionSecureAuthenticated;
-
-import java.util.Arrays;
-import java.util.Date;
-
-import org.neociclo.odetteftp.OdetteFtpException;
-import org.neociclo.odetteftp.OdetteFtpSession;
-import org.neociclo.odetteftp.OdetteFtpVersion;
-import org.neociclo.odetteftp.oftplet.AnswerReasonInfo;
-import org.neociclo.odetteftp.oftplet.EndSessionReasonInfo;
-import org.neociclo.odetteftp.protocol.AnswerReason;
-import org.neociclo.odetteftp.protocol.CommandExchangeBuffer;
-import org.neociclo.odetteftp.protocol.CommandIdentifier;
-import org.neociclo.odetteftp.protocol.DeliveryNotification;
-import org.neociclo.odetteftp.protocol.DeliveryNotification.EndResponseType;
-import org.neociclo.odetteftp.protocol.EndSessionReason;
-import org.neociclo.odetteftp.protocol.NegativeResponseReason;
-import org.neociclo.odetteftp.protocol.RecordFormat;
-import org.neociclo.odetteftp.protocol.VirtualFile;
-import org.neociclo.odetteftp.protocol.v14.OdetteFtpVer14Handler;
-import org.neociclo.odetteftp.security.AuthenticationChallengeCallback;
-import org.neociclo.odetteftp.security.EncryptAuthenticationChallengeCallback;
-import org.neociclo.odetteftp.util.BufferUtil;
-import org.neociclo.odetteftp.util.OftpUtil;
-import org.neociclo.odetteftp.util.ProtocolUtil;
-import org.neociclo.odetteftp.util.TimestampTicker;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * @author Rafael Marins

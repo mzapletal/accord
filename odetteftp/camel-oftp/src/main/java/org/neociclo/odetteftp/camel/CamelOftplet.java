@@ -16,15 +16,6 @@
  */
 package org.neociclo.odetteftp.camel;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Observer;
-import java.util.Queue;
-import java.util.concurrent.ConcurrentLinkedQueue;
-
-import javax.security.auth.callback.CallbackHandler;
-
 import org.apache.camel.RuntimeCamelException;
 import org.neociclo.odetteftp.EntityType;
 import org.neociclo.odetteftp.OdetteFtpException;
@@ -44,6 +35,15 @@ import org.neociclo.odetteftp.security.SecurityContext;
 import org.neociclo.odetteftp.support.OdetteFtpConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Observer;
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
+
+import javax.security.auth.callback.CallbackHandler;
 
 /**
  * @author Rafael Marins

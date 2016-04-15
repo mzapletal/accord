@@ -16,10 +16,6 @@
  */
 package org.neociclo.odetteftp.examples.client;
 
-import java.net.InetSocketAddress;
-
-import javax.net.ssl.SSLContext;
-
 import org.neociclo.odetteftp.examples.MainSupport;
 import org.neociclo.odetteftp.examples.support.DefaultOftpletFactory;
 import org.neociclo.odetteftp.examples.support.SampleOftpSslContextFactory;
@@ -28,6 +24,10 @@ import org.neociclo.odetteftp.security.MappedCallbackHandler;
 import org.neociclo.odetteftp.security.PasswordCallback;
 import org.neociclo.odetteftp.service.TcpClient;
 import org.neociclo.odetteftp.support.PasswordHandler;
+
+import java.net.InetSocketAddress;
+
+import javax.net.ssl.SSLContext;
 
 /**
  * @author Rafael Marins

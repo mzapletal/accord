@@ -16,10 +16,10 @@
  */
 package org.neociclo.odetteftp.oftplet;
 
+import org.neociclo.odetteftp.protocol.AnswerReason;
+
 import java.io.File;
 import java.io.Serializable;
-
-import org.neociclo.odetteftp.protocol.AnswerReason;
 
 /**
  * @author Rafael Marins

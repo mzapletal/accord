@@ -16,14 +16,14 @@
  */
 package org.neociclo.odetteftp.camel;
 
-import java.io.File;
-
 import org.apache.camel.Exchange;
 import org.apache.camel.component.file.GenericFileOperationFailedException;
 import org.apache.camel.spi.Synchronization;
 import org.neociclo.odetteftp.protocol.VirtualFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.File;
 
 /**
  * @author Rafael Marins

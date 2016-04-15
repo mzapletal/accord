@@ -16,12 +16,12 @@
  */
 package org.neociclo.odetteftp.service;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
 import org.neociclo.odetteftp.TransferMode;
 import org.neociclo.odetteftp.support.OdetteFtpConfiguration;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * @author Rafael Marins

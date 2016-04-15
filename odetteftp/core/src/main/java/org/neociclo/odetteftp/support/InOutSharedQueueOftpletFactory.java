@@ -16,12 +16,12 @@
  */
 package org.neociclo.odetteftp.support;
 
-import java.util.Queue;
-
 import org.neociclo.odetteftp.oftplet.Oftplet;
 import org.neociclo.odetteftp.oftplet.OftpletFactory;
 import org.neociclo.odetteftp.protocol.OdetteFtpObject;
 import org.neociclo.odetteftp.security.MappedCallbackHandler;
+
+import java.util.Queue;
 
 /**
  * @author Rafael Marins

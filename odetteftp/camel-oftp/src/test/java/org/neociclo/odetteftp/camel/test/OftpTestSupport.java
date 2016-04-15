@@ -16,6 +16,10 @@
  */
 package org.neociclo.odetteftp.camel.test;
 
+import org.apache.camel.test.CamelTestSupport;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -24,10 +28,6 @@ import java.io.FileWriter;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Random;
-
-import org.apache.camel.test.CamelTestSupport;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * @author Rafael Marins

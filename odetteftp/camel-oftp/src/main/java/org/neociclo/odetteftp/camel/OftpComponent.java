@@ -16,9 +16,6 @@
  */
 package org.neociclo.odetteftp.camel;
 
-import java.net.URI;
-import java.util.Map;
-
 import org.apache.camel.CamelContext;
 import org.apache.camel.Endpoint;
 import org.apache.camel.impl.DefaultComponent;
@@ -26,6 +23,9 @@ import org.jboss.netty.util.HashedWheelTimer;
 import org.jboss.netty.util.Timer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.net.URI;
+import java.util.Map;
 
 /**
  * @author Rafael Marins

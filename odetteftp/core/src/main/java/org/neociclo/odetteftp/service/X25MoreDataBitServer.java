@@ -16,12 +16,12 @@
  */
 package org.neociclo.odetteftp.service;
 
+import org.neociclo.odetteftp.TransportType;
+import org.neociclo.odetteftp.oftplet.OftpletFactory;
+
 import java.net.InetSocketAddress;
 
 import javax.net.ssl.SSLContext;
-
-import org.neociclo.odetteftp.TransportType;
-import org.neociclo.odetteftp.oftplet.OftpletFactory;
 
 /**
  * @author Rafael Marins

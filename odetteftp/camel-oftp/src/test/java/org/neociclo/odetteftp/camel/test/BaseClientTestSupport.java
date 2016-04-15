@@ -16,18 +16,6 @@
  */
 package org.neociclo.odetteftp.camel.test;
 
-import static org.neociclo.odetteftp.TransferMode.SENDER_ONLY;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Queue;
-import java.util.concurrent.ConcurrentLinkedQueue;
-
 import org.neociclo.odetteftp.TransferMode;
 import org.neociclo.odetteftp.examples.support.DefaultOftpletFactory;
 import org.neociclo.odetteftp.oftplet.OftpletFactory;
@@ -40,6 +28,18 @@ import org.neociclo.odetteftp.support.InOutSharedQueueOftpletFactory;
 import org.neociclo.odetteftp.support.OdetteFtpConfiguration;
 import org.neociclo.odetteftp.support.OftpletEventListener;
 import org.neociclo.odetteftp.support.PasswordHandler;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
+
+import static org.neociclo.odetteftp.TransferMode.SENDER_ONLY;
 
 /**
  * @author Rafael Marins

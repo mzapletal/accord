@@ -16,12 +16,12 @@
  */
 package org.neociclo.odetteftp.camel;
 
-import java.util.Map;
-
 import org.apache.camel.impl.DefaultMessage;
 import org.apache.camel.util.ExchangeHelper;
 import org.neociclo.odetteftp.OdetteFtpSession;
 import org.neociclo.odetteftp.protocol.OdetteFtpObject;
+
+import java.util.Map;
 
 /**
  * @author Rafael Marins
