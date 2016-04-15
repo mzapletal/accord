@@ -260,7 +260,7 @@ public class BaseServerTestSupport extends OftpTestSupport implements IUserManag
         long restartOffset = Math.max(vf.getRestartOffset(), 0);
 
         long unitCount = (vf.getFile() == null ? 0 : vf.getFile().length());
-        long fileSize = Math.max(vf.getSize(), ProtocolUtil.computeVirtualFileSize(unitCount, recordFormat, recordSize));
+        long fileSize = Math.max(vf.getSize(), ProtocolUtil.computeVirtualFileSize(unitCount));
 
         //
         // Default OFTP2 start file values when a simple VirtualFile object
@@ -344,7 +344,7 @@ public class BaseServerTestSupport extends OftpTestSupport implements IUserManag
         long restartOffset = Math.max(vf.getRestartOffset(), 0);
 
         long unitCount = (vf.getFile() == null ? 0 : vf.getFile().length());
-        long fileSize = Math.max(vf.getSize(), ProtocolUtil.computeVirtualFileSize(unitCount, recordFormat, recordSize));
+        long fileSize = Math.max(vf.getSize(), ProtocolUtil.computeVirtualFileSize(unitCount));
 
         // return the normalized virtual file
         DefaultNormalizedVirtualFile n = new DefaultNormalizedVirtualFile(vf);

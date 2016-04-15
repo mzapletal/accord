@@ -113,10 +113,10 @@ public abstract class BaseClientTestSupport extends OftpTestSupport {
 		filesToSend.offer(vf);
 
 		OftpletFactory factory = new InOutSharedQueueOftpletFactory(conf, securityCallbacks, filesToSend, null, null);
-		TcpClient client = new TcpClient("localhost", getPort(), factory);
+		TcpClient client = new TcpClient( factory);
 
 		client.disableLogging();
-		client.connect(true);
+		client.connect("localhost", getPort(),true);
 		
 	}
 
@@ -128,10 +128,10 @@ public abstract class BaseClientTestSupport extends OftpTestSupport {
 		securityCallbacks.addHandler(PasswordCallback.class, new PasswordHandler(usercode, pwd));
 
 		OftpletFactory factory = new DefaultOftpletFactory(securityCallbacks);
-		TcpClient client = new TcpClient(server, getPort(), factory);
+		TcpClient client = new TcpClient(factory);
 
 		client.disableLogging();
-		client.connect(true);
+		client.connect(server, getPort(), true);
 		
 	}
 
@@ -153,10 +153,10 @@ public abstract class BaseClientTestSupport extends OftpTestSupport {
 
 		factory.setEventListener(eventListener);
 
-		TcpClient client = new TcpClient(server, getPort(), factory);
+		TcpClient client = new TcpClient(factory);
 
 		client.disableLogging();
-		client.connect(true);
+		client.connect(server, getPort(), true);
 
 		ArrayList<OdetteFtpObject> result = new ArrayList<OdetteFtpObject>();
 		result.addAll(incomingQueue);

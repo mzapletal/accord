@@ -51,7 +51,7 @@ public class TcpClient extends Client {
     private SSLContext sslContext;
 
 	public TcpClient() {
-		this(null);
+		super();
 	}
 
     public TcpClient(SSLContext sslContext) {
@@ -59,7 +59,16 @@ public class TcpClient extends Client {
     	this.sslContext = sslContext;
     }
 
-    public synchronized void connect(String host, boolean await) throws Exception {
+	public TcpClient(SSLContext sslContext, OftpletFactory factory) {
+		super(factory);
+		this.sslContext = sslContext;
+	}
+
+	public TcpClient(OftpletFactory factory) {
+		super(factory);
+	}
+
+	public synchronized void connect(String host, boolean await) throws Exception {
     	connect(host, -1, await);
     }
 

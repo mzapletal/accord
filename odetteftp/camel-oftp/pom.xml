@@ -18,31 +18,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
    <parent>
-      <groupId>org.neociclo.accord.odetteftp</groupId>
-      <artifactId>odetteftp-parent</artifactId>
+      <groupId>org.accordproject.odetteftp</groupId>
+      <artifactId>oftp-project</artifactId>
       <version>2.1.3</version>
    </parent>
 
    <modelVersion>4.0.0</modelVersion>
    <artifactId>camel-oftp</artifactId>
-   <packaging>bundle</packaging>
+   <packaging>jar</packaging>
    <name>Accord Odette FTP :: Camel OFTP</name>
    <description>Accord Odette FTP Component for Apache Camel</description>
 
   <properties>
-    <odetteftp.osgi.export.pkg>
-      org.neociclo.odetteftp.camel.*
-    </odetteftp.osgi.export.pkg>
-    <odetteftp.osgi.import>
-      !org.neociclo.odetteftp.camel.*,
-      org.neociclo.odetteftp.*,
-      org.apache.camel.*;version="[2.5.0,3)",
-      org.apache.commons.io.*;version="[1.4.0,2)",
-      *
-    </odetteftp.osgi.import>
-    <odetteftp.osgi.private.pkg>
-      org.neociclo.odetteftp.netty.*
-    </odetteftp.osgi.private.pkg>
   
     <camel.version>2.5.0</camel.version>
     <commons-io.version>1.3.2</commons-io.version>
@@ -69,13 +56,13 @@
       </dependency>
 
       <dependency>
-         <groupId>org.neociclo.accord.odetteftp</groupId>
+         <groupId>org.accordproject.odetteftp</groupId>
          <artifactId>oftp-core</artifactId>
          <version>${project.version}</version>
       </dependency>
 
-      <dependency>
-         <groupId>org.neociclo.accord.odetteftp</groupId>
+     <dependency>
+         <groupId>org.accordproject.odetteftp</groupId>
          <artifactId>oftp-examples</artifactId>
          <version>${project.version}</version>
       </dependency>

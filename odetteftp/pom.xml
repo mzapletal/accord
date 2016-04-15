@@ -40,7 +40,8 @@
 
   <modules>
     <module>core</module>
-<!--     <module>oftp-isdn</module> -->
+    <module>camel-oftp</module>
+    <module>examples</module>
   </modules>
 
   <properties>
